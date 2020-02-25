@@ -2,9 +2,10 @@
 $user=new Users();
 if(isset($_POST['resemailid'])){
 	$emailid=mysqli_escape_string($conn,$_POST['resemailid']);
-	$_SESSION['name']=$emailid;
+	session_start();
+	$_SESSION['resemailid']=$emailid;
 	if($user->freshUser($emailid,$conn))
-		$user->flashError(['Email Address Not Registered'],'/reset_password');
+		$user->flashError([NULL,NULL,'Email Address Not Registered'],'/');
 	else{
 		$row=$user->fetchUser($emailid);
 		$name=$row['user_name'];

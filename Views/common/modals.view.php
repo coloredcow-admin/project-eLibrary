@@ -46,7 +46,6 @@
   </form>
 </div>
 </div>
-
 <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="form">
    <form action='/delusr' method="POST">
@@ -94,29 +93,4 @@
   </div>
 </form>
 </div>
-</div>
-<?php $aria_value='true';
-?>
-<div class="modal fade" id="resetPasswordModal" tabindex="-1" role="dialog" aria-hidden="">
- <div class="modal-dialog" role="form">
-   <form method="POST" action="/send_reset_password_link" onsubmit="return checkFieldEmail('resemailid')">
-     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Reset Your Password</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-         <input type="email" class="form-control mt-3" name="resemailid" id="resemailid"  placeholder="Enter Email Address *" onkeyup="checkFieldEmail('resemailid')">
-         <small class="form-text text-muted text-danger"
-         id='errorresemailid'></small>
-       </div>
-     </div>
-     <div class="modal-footer">
-      <button class="btn btn-primary" type="submit">Get Password Reset Email</button>
-    </div>
-  </div>
-</form>
-</div>
+</div>      
