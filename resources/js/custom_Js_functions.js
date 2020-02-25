@@ -228,3 +228,34 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+function addCategory(){
+  if(checkFieldName('category_name')){
+    var cname=document.getElementById('category_name').value;
+    var view=document.getElementById('custDisp').value;
+    var xhttp= new XMLHttpRequest();
+    alert(view);
+    xhttp.onreadystatechange=function(){
+      if(this.readyState==4&&this.status==200){
+        var stat=this.responseText;
+        if(stat){
+         if(view=='reload'){
+           location.reload(); 
+         }
+         else{
+           alert('hello');
+         }
+       }
+     }
+   };
+   xhttp.open("POST","addcat",true);
+   xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+   var str_send="&category_name="+cname;
+   xhttp.send(str_send);
+ }
+}
+$('#addCategoryModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var custDisp = button.data('custDisp') 
+  var modal = $(this)
+  modal.find('.modal-body #custDisp').val(custDisp)
+})

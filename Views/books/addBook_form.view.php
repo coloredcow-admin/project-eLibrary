@@ -26,7 +26,7 @@ $msg1=$msg2=$msg3=$msg4=NULL;
              <small class="form-text text-muted text-danger" id='errorbook_edition'><?=$msg3?></small>  
            </div>
          </div>
-         <div class="form-group">&nbsp;&nbsp;&nbsp;Categories <small class="text-muted ">(Optional)</small>
+         <div class="form-group">&nbsp;&nbsp;&nbsp;Categories <small class="text-muted ">(Optional)</small> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-custDisp='text'><i class="fa fa-plus-square text-primary"></i></a>
           <div class="input-group">
            <?php 
            $i=1;
@@ -68,3 +68,4 @@ $msg1=$msg2=$msg3=$msg4=NULL;
 </form>
 </div>
 </div>
+<?php  require __dir__.'/'.'../../Views/bookCategories/addCategory_form.view.php';?>
