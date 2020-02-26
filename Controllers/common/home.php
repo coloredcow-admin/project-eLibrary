@@ -53,7 +53,7 @@ if(isset($_SESSION['rname'])){
 							<p class="lead mt-4" style="font-size:1.5em;"><b>Benefits</b><i class="fas fa-star h5"></i></p>
 							<p class="lead mt-2" style="font-size:1.3em; letter-spacing: 0.2px;  "><i class="fas fa-check"></i> Increases reading habits </p>
 							<p class="lead mt-2" style="font-size:1.3em; "><i class="fas fa-check"></i> Exposure to more books</p>
-							<p class="lead mt-2" style="font-size:1.3em;   letter-spacing: 0.6px;  "><i class="fas fa-check"></i> Entertainment&nbsp;&amp;&nbsp;Peace</p></div>
+							<p class="lead mt-2" style="font-size:1.3em;   letter-spacing: 0.6px;  "><i class="fas fa-check"></i> Entertainment&nbsp;&amp;&nbsp;peace</p></div>
 						</div>
 					</div>	
 				</div>
