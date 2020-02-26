@@ -3,19 +3,19 @@
    <form action='/logout' method="POST">
      <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Are you sure ?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label>Are You Sure, You Want To <b>Logout</b> !</label>
+          <label>Once you logout, the session will be terminated </label>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-        <button type="submit" class="btn btn-danger">Yes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Keep me logged in</button>
+        <button type="submit" class="btn btn-danger">Exit anyway</button>
       </div>
     </div>
   </form>

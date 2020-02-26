@@ -64,7 +64,7 @@ if(isset($_GET['listbooks']))
 								<div class="card-body">
 									<h1 class="card-title pricing-card-title"><?=$total_users?> </h1>
 
-									<a href='/login?view=users' class="btn btn-lg btn-block btn-link">Monitor <i class="fas fa-user-edit"></i>
+									<a href='/login?view=users' class="btn btn-lg btn-block btn-link">More info <i class="fas fa-info-circle"></i>
 									</a>
 								</div>
 							</div>
