@@ -46,14 +46,14 @@ if(isset($_SESSION['rname'])){
 						<p class="lead" style="font-size:1.4em; font-weight:500;">
 						A bookkeeping application that maintains an inventory of books and records your read list.</p></div>
 						<div class="text-center mt-5 mr-lg-5">
-							<p class="lead my-0" style="font-size:1.4em;"><q>Today a Reader, Tomorrow a Leader.</q></p>
+							<p class="lead my-0" style="font-size:1.4em;"><q>Today a reader, tomorrow a leader.</q></p>
 							<p class="text-center" style="font-size:0.9rem;">- Margaret Fuller</p>
 						</div>
 						<div class="mt-4">
 							<p class="lead mt-4" style="font-size:1.5em;"><b>Benefits</b><i class="fas fa-star h5"></i></p>
 							<p class="lead mt-2" style="font-size:1.3em; letter-spacing: 0.2px;  "><i class="fas fa-check"></i> Increases reading habits </p>
 							<p class="lead mt-2" style="font-size:1.3em; "><i class="fas fa-check"></i> Exposure to more books</p>
-							<p class="lead mt-2" style="font-size:1.3em;   letter-spacing: 0.6px;  "><i class="fas fa-check"></i> Entertainment&nbsp;&amp;&nbsp;Peace</p></div>
+							<p class="lead mt-2" style="font-size:1.3em;   letter-spacing: 0.6px;  "><i class="fas fa-check"></i> Entertainment&nbsp;&amp;&nbsp;peace</p></div>
 						</div>
 					</div>	
 				</div>
