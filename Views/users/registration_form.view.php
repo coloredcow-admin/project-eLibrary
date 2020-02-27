@@ -52,8 +52,8 @@
         </a>
     </form>
 </div>
-<script src="resources/Login/vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="resources/Login/vendor/tilt/tilt.jquery.min.js"></script>
+<script src="resources/js/jquery-3.2.1.min.js"></script>
+<script src="resources/js/tilt.jquery.min.js"></script>
 <script>
     $(".js-tilt").tilt({
         scale: 1.1
