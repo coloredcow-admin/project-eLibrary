@@ -1,5 +1,3 @@
-<link rel="stylesheet" type="text/css" href="resources/Login/vendor/select2/select2.min.css" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <div class="login100-pic js-tilt mx-auto" data-tilt style="padding-bottom:10px; text-align:center;">
     <img src="https://pageturnprohome.files.wordpress.com/2019/07/compressediphone.png" alt="IMG" style="max-width: 200px; height:auto;" />
     <h6 style="padding-top: 5px;">Complete Digital Library Platform for Personalized Learning</h6>
