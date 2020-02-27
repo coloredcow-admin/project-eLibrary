@@ -231,9 +231,9 @@ function topFunction() {
 function addCategory(){
   if(checkFieldName('category_name')){
     var cname=document.getElementById('category_name').value;
-    var view=document.getElementById('custDisp').value;
+    var view=document.getElementById('custDisp');
     var xhttp= new XMLHttpRequest();
-    alert(view);
+    alert(view.name);
     xhttp.onreadystatechange=function(){
       if(this.readyState==4&&this.status==200){
         var stat=this.responseText;
@@ -253,9 +253,12 @@ function addCategory(){
    xhttp.send(str_send);
  }
 }
+
 $('#addCategoryModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) 
-  var custDisp = button.data('custDisp') 
+  alert(button.data('custDisp'));
+  var custDisp = button.data("custDisp") 
   var modal = $(this)
   modal.find('.modal-body #custDisp').val(custDisp)
+  alert(document.getElementById('custDisp').value);
 })
