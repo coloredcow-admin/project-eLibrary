@@ -46,7 +46,6 @@
   </form>
 </div>
 </div>
-
 <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="form">
    <form action='/delusr' method="POST">
@@ -66,9 +65,10 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
         <button type="submit" class="btn btn-danger">Delete</button>
-      </div>
+       </div>
     </div>
-  </form>
+  </div>
+</form>
 </div>
 </div>
 <div class="modal fade" id="deleteBookModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -92,6 +92,7 @@
         <button type="submit" class="btn btn-danger">Delete</button>
       </div>
     </div>
-  </form>
+  </div>
+</form>
 </div>
-</div>
+</div>      

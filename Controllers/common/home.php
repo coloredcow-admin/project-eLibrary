@@ -1,38 +1,72 @@
-<?php
-require __dir__.'/'.'../../Controllers/auth/checkAuthentication.php';
-if (session_status() == PHP_SESSION_NONE) {
-	session_start();
-}
-if(isset($_SESSION['type'])){
-	header('location:/login');
-}
-$msg1=$msg2=$msg3=$emailid=$password=$rname=NULL;
-if(isset($_SESSION['error1'])){
-	$msg1="<p class='text-danger'>{$_SESSION['error1']}</p>";
-	unset($_SESSION['error1']);
-}
-if (isset($_SESSION['error2'])){
-	$msg2="<p class='text-danger'>{$_SESSION['error2']}</p>";
-	unset($_SESSION['error2']);
-}
-if (isset($_SESSION['error3'])){
-	$msg3="<p class='text-danger'>{$_SESSION['error3']}</p>";
-	unset($_SESSION['error3']);
-}
-if(isset($_SESSION['name'])){
-	$emailid=$_SESSION['name'];
-	unset($_SESSION['name']);
-}
+	<?php
+	require __dir__.'/'.'../../Controllers/auth/checkAuthentication.php';
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
+	if(isset($_SESSION['type'])){
+		header('location:/login');
+	}
+	$msg1=$msg2=$msg3=$emailid=$password=$rname=NULL;
+	if(isset($_SESSION['error1'])){
+		$msg1="<p class='text-danger'>{$_SESSION['error1']}</p>";
+		unset($_SESSION['error1']);
+	}
+	if (isset($_SESSION['error2'])){
+		$msg2="<p class='text-danger'>{$_SESSION['error2']}</p>";
+		unset($_SESSION['error2']);
+	}
+	if (isset($_SESSION['error3'])){
+		$msg3="<p class='text-danger'>{$_SESSION['error3']}</p>";
+		unset($_SESSION['error3']);
+	}
+	if(isset($_SESSION['name'])){
+		$emailid=$_SESSION['name'];
+		unset($_SESSION['name']);
+	}
 
-if(isset($_SESSION['password'])){
-	$password=$_SESSION['password'];
-	unset($_SESSION['password']);
-}
-if(isset($_SESSION['rname'])){
-	$rname=$_SESSION['rname'];
-	unset($_SESSION['rname']);
-}
+	if(isset($_SESSION['password'])){
+		$password=$_SESSION['password'];
+		unset($_SESSION['password']);
+	}
+	if(isset($_SESSION['rname'])){
+		$rname=$_SESSION['rname'];
+		unset($_SESSION['rname']);
+	}
+	?>
+	<?php
+	$modal_status=NULL;
+	$resemail=NULL; 
+	if(isset($_SESSION['resemailid'])){
+		$resemail=$_SESSION['resemailid'];
+		unset($_SESSION['resemailid']);
+		echo "<script> $(document).ready(function(){ $('#resetPasswordModal').modal('show');
+	}); </script>";
+	}	
 ?>
+<div class="modal fade" id="resetPasswordModal">
+  <div class="modal-dialog" role="form">
+    <form method="POST" action="/send_reset_password_link" onsubmit="return checkFieldEmail('resemailid')">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Reset Your Password</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <input type="email" class="form-control mt-3" name="resemailid" id="resemailid"  placeholder="Enter Email Address *" value="<?=$resemail?>" onkeyup="checkFieldEmail('resemailid')">
+            <small class="form-text text-muted text-danger"
+            id='errorresemailid'><?=$msg3?></small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit">Get Password Reset Email</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 <div class="row bg-light d-flex align-items-center py-3" style="min-height:calc(100% - 140px);">
 	<?php if(isset($_GET['register']))
 	require __dir__.'/'.'../../Views/users/registration_form.view.php';
@@ -60,7 +94,6 @@ if(isset($_SESSION['rname'])){
 				<div class="col-xl-5 col-lg-5 mr-lg-5 pr-lg-5 col-md-12 ml-0">	
 					<div class="col-xl-9">
 						<div class="mr-lg-5">
-
 							<?php	require __dir__.'/'.'../../Views/users/login_form.view.php';
 							?>
 						</div>
