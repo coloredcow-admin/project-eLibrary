@@ -7,7 +7,7 @@
 		<h2 style="font-family: Georgia;" class="">eLibrary</h2>
 	</a>
 	
-	<?php if((Request::uri()=='')||(Request::uri()=='index')||(Request::uri()=='index.php')||(Request::uri()=='login')||(Request::uri()=='editbook')):?>	
+	<?php if((Request::uri()=='login')||(Request::uri()=='editbook')):?>	
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbartoggler" aria-controls="navbartoggler"  aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon" title="Menu"></span>
 	</button>
@@ -15,14 +15,9 @@
 
 <div class="collapse navbar-collapse" id="navbartoggler">
 	<ul class="navbar-nav mr-sm-0 ml-5 mx-auto text-center">
-		<?php if(isset($_GET['register'])): ?> 
-			<li class="nav-item">Already Registered? <a class="btn btn-outline-primary mr-md-0 ml-3" href="/">Log in</a>
-			</li>
 			<?php 
-			elseif((Request::uri()=='verifymsg')):?>
+			if((Request::uri()=='verifymsg')):?>
 				<li class="nav-item">Done Verification?<a class="btn btn-outline-primary mr-5 ml-5" href="/index">Log in</a></li>
-				<?php elseif((Request::uri()=='')||(Request::uri()=='index.php')||(Request::uri()=='index')):?>
-				<li class="nav-item">New User?<a class="btn btn-outline-primary ml-3" href="/index?register=1">Join Here</a></li>		
 				<?php elseif($type==='inadmin'):?>
 					<li class="nav-item mx-5">
 						Hello, 
