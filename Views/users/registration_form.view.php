@@ -44,13 +44,15 @@
         <button class="btn  btn-primary btn-block mt-2 mb-3" type="submit">Register</button>
         <div class="row mt-3 m-1">
             <hr class="d-inline col">
-            <p class="text-muted text-center d-inline col-7 mt-1">or register with</p>
+            <p class="text-muted text-center d-inline col-7 mt-1">or</p>
             <hr class="d-inline col">
+        </div>         
+        <button class="btn btn-outline-dark btn-block my-0" onclick="window.location='<?=$loginURL?>'"><img src="../resources/images/google_logo.jpg" class="d-inline rounded-circle mx-auto my-0 py-0"  alt="Login with Google" height="25"> &nbsp;Google Signup
+        </button>
+        <div class="text-center mt-2 pl-2 mb-0">
+            Already Registered? <a class="" href="/">Login</a>    
         </div>
-        <a href="<?= $loginURL ?>">
-            <img src="../resources/images/google_logo.jpg" class="rounded-circle mx-auto d-block p-2" alt="Login with Google" height="70" onMouseOver="this.style.boxShadow = '0px 0px 3px #000'; this.style.transitionDuration = '0.3s';" onMouseOut="this.style.boxShadow = '0 0 0 #000'; this.style.transitionDuration = '0.3s';">
-        </a>
-    </form>
+    </form>          
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="resources/js/tilt.jquery.min.js"></script>
