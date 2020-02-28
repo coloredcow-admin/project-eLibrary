@@ -43,16 +43,16 @@
         <small id="errorpassword1" class="form-text text-muted text-danger"></small>
         <button class="btn  btn-primary btn-block mt-2 mb-3" type="submit">Register</button>
         <div class="row mx-1 my-1">
-        <hr class="d-inline col">
-        <p class="text-muted text-center d-inline col-2 pt-1 mb-0">or</p>
-        <hr class="d-inline col">
-    </div>         
-    <button class="btn btn-outline-dark btn-block my-0" onclick="window.location='<?=$loginURL?>'"><img src="../resources/images/google_logo.jpg" class="d-inline rounded-circle mx-auto my-0 py-0"  alt="Login with Google" height="25"> &nbsp;Google Signup
-    </button>
-    <div class="text-center mt-2 pl-2 mb-0">
-        Already Registered? <a class="" href="/">Login</a>    
-    </div>
-</form>          
+            <hr class="d-inline col">
+            <p class="text-muted text-center d-inline col-2 pt-1 mb-0">or</p>
+            <hr class="d-inline col">
+        </div>         
+        <button class="btn btn-outline-dark btn-block my-0" onclick="window.location='<?=$loginURL?>'"><img src="../resources/images/google_logo.jpg" class="d-inline rounded-circle mx-auto my-0 py-0"  alt="Login with Google" height="25"> &nbsp;Google Signup
+        </button>
+        <div class="text-center mt-2 pl-2 mb-0">
+            Already Registered? <a class="" href="/">Login</a>    
+        </div>
+    </form>          
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="resources/js/tilt.jquery.min.js"></script>
