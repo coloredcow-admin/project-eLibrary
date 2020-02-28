@@ -100,7 +100,7 @@ if(isset($_GET['listbooks']))
 						<?php require __dir__.'/'.'../users/ListAllUsers.php'; ?>
 						<?php elseif($_GET['view']=='categories'): ?>
 							<h2>Categories
-								<a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-custDisp="reload"><i class="fas fa-plus-square h4 text-primary"></i></a></h2>
+								<a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="reload"><i class="fas fa-plus-square h4 text-primary"></i></a></h2>
 							</div>
 
 							<?php require __dir__.'/'.'../bookCategories/ListCategories.php';

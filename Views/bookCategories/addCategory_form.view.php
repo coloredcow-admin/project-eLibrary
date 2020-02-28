@@ -13,11 +13,11 @@ $msg1=NULL;
         <div class="modal-body">
           <div class="form-group">
             <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Enter Category Name" onkeyup="checkFieldName('category_name')">
+             <input type="hidden" name="randdata" id="randdata" value="random">
             <small class="form-text text-muted text-danger" id='errorcategory_name'><?=$msg1?></small>   
           </div>
         </div>
         <div class="modal-footer">
-          <input type="hidden" name="custDisp" id="custDisp">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" onclick="addCategory()">Add</button>
         </div>

@@ -231,34 +231,34 @@ function topFunction() {
 function addCategory(){
   if(checkFieldName('category_name')){
     var cname=document.getElementById('category_name').value;
-    var view=document.getElementById('custDisp');
+    var view=document.getElementById('randdata').value;
     var xhttp= new XMLHttpRequest();
-    alert(view.name);
     xhttp.onreadystatechange=function(){
       if(this.readyState==4&&this.status==200){
         var stat=this.responseText;
         if(stat){
-         if(view=='reload'){
+         if(view=="reload"){
            location.reload(); 
          }
          else{
-           alert('hello');
-         }
-       }
-     }
-   };
-   xhttp.open("POST","addcat",true);
-   xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-   var str_send="&category_name="+cname;
-   xhttp.send(str_send);
- }
-}
+          var new_category='<label for="'+cname+'" class="form-control">'+cname+'<input  type="checkbox" name="'+cname+'" id="'+cname+'"  value="'+cname+'" style="width:15px; height:15px;"></label>';
+          var categories=document.getElementById('dynamic-cat');
+          categories.innerHTML=new_category+categories.innerHTML;
+          $('#addCategoryModal').modal('hide');
+        }
 
+      }
+    }
+  };
+  xhttp.open("POST","addcat",true);
+  xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  var str_send="&category_name="+cname;
+  xhttp.send(str_send);
+}
+}
 $('#addCategoryModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) 
-  alert(button.data('custDisp'));
-  var custDisp = button.data("custDisp") 
+  var custDisp = button.data("randdata") 
   var modal = $(this)
-  modal.find('.modal-body #custDisp').val(custDisp)
-  alert(document.getElementById('custDisp').value);
+  modal.find('.modal-body #randdata').val(custDisp)
 })

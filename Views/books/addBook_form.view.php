@@ -25,8 +25,8 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                  <small class="form-text text-muted text-danger" id='errorbook_edition'><?=$msg3?></small>  
                </div>
              </div>
-             <div class="form-group">&nbsp;&nbsp;&nbsp;Categories <small class="text-muted ">(Optional)</small> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-custDisp='text'><i class="fa fa-plus-square text-primary"></i></a>
-              <div class="input-group">
+             <div class="form-group">&nbsp;&nbsp;&nbsp;Categories <small class="text-muted ">(Optional)</small> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a>
+              <div class="input-group" id="dynamic-cat">
                <?php 
                $i=1;
                while($categoryFetch=mysqli_fetch_assoc($categories)):  
@@ -35,11 +35,10 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                 $cid=$categoryFetch['cid'];
                 ?>
                 <label <?="for='{$makeId}'"?> class='form-control'><?=$cname?> <input  type='checkbox' <?="name='{$makeId}' id='{$makeId}'  value='{$cid}' "?> style="width:15px; height:15px;"></label>
-                <?php 
-                if($i%2==0):
-                  ?>
+                <?php
+                if($i%2==0):?>
                 </div>
-                <div class='input-group'>
+                <div class="input-group">
                   <?php
                 endif;
                 $i++;

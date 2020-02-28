@@ -27,7 +27,7 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                 <small class="form-text text-muted text-danger" id='erroredition'><?=$msg3?></small>
               </div>
               <div class="form-group">Categories <small class="text-muted">(Optional)</small>
-               <div class="input-group">
+               <a href='#'  data-toggle="modal" data-target="#addCategoryModal"  data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a><div class="input-group" id="dynamic-cat">
                  <?php 
                  $i=1;
                  while($categoryFetch=mysqli_fetch_assoc($categories)):  
@@ -47,7 +47,7 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                  if($i%2==0):
                   ?>
                 </div>
-                <div class='input-group'>
+                <div class="input-group">
                   <?php
                 endif;
                 $i++;
@@ -78,4 +78,4 @@ $msg1=$msg2=$msg3=$msg4=NULL;
 </div>
 </div>
 </div>
-
+<?php  require __dir__.'/'.'../../Views/bookCategories/addCategory_form.view.php';?>
