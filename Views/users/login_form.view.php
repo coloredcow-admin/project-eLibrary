@@ -20,12 +20,12 @@
 		</div>
 		<small class="form-text text-muted text-danger" id="errorpassword"><?= $msg2 ?></small>
 		<small class="form-text text-muted text-right"><a href="/reset_password">Forgot Password?</a></small>
-		<button class="btn  btn-primary btn-block mt-2" type="submit">Log in</button>
-		<div class="row mt-3 m-1">
+				<button class="btn btn-primary btn-block mt-2" type="submit">Login</button>
+		<div class="row mx-1 my-1">
 			<hr class="d-inline col">
 			<p class="text-muted text-center d-inline col-2 pt-1 mb-0">or</p>
 			<hr class="d-inline col">
-		</div>         
+		</div>       
 		<button class="btn btn-outline-dark btn-block my-0" onclick="window.location='<?=$loginURL?>'"><img src="../resources/images/google_logo.jpg" class="d-inline rounded-circle mx-auto my-0 py-0"  alt="Login with Google" height="25"> &nbsp;Google Login
 		</button>
 		<div class="text-center mt-3 pl-2 mb-0">
