@@ -41,7 +41,7 @@
 		unset($_SESSION['resemailid']);
 		echo "<script> $(document).ready(function(){ $('#resetPasswordModal').modal('show');
 	}); </script>";
-	}	
+	}
 ?>
 <div class="modal fade" id="resetPasswordModal">
   <div class="modal-dialog" role="form">
@@ -68,10 +68,10 @@
   </div>
 </div>
 <div class="row bg-light d-flex align-items-center py-3" style="min-height:calc(100% - 140px);">
-	<?php if(isset($_GET['register']))
-	require __dir__.'/'.'../../Views/users/registration_form.view.php';
-	elseif((Request::uri()=='')||(Request::uri()=='index.php')||(Request::uri()=='index')){						
-		?>
+	<?php if (isset($_GET['register']))
+		require __dir__ . '/' . '../../Views/users/registration_form.view.php';
+	elseif ((Request::uri() == '') || (Request::uri() == 'index.php') || (Request::uri() == 'index')) {
+	?>
 		<div class="col-lg-1 col-xl d-none d-lg-block"></div>
 		<div class="col-xl-5 col-lg-5 ml-lg-4 col-md-6 p-0 mx-auto mb-4 mb-lg-0 col-sm-6 col-8">
 			<div class="text-lg-left text-center ml-lg-5 text-muted ml-lg-5">
