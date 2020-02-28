@@ -52,7 +52,7 @@
         </a>
     </form>
 </div>
-<script src="resources/js/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="resources/js/tilt.jquery.min.js"></script>
 <script>
     $(".js-tilt").tilt({
