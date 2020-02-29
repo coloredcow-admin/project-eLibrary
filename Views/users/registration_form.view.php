@@ -2,9 +2,9 @@
     <img src="https://pageturnprohome.files.wordpress.com/2019/07/compressediphone.png" alt="IMG" style="max-width: 200px; height:auto;" />
     <h6 style="padding-top: 5px;">Complete Digital Library Platform for Personalized Learning</h6>
 </div>
-<div class="border border-secondary p-4 rounded bg-white col-sm-6 col-9 col-md-5 col-lg-4 col-xl-3 mx-auto">
+<div class="border border-secondary px-4 py-3 rounded bg-white col-sm-6 col-9 col-md-5 col-lg-4 col-xl-3 mx-auto">
     <form action="/registration" method="post" onsubmit="return (checkFieldName('rname') && checkFieldEmail('remailid') && checkFieldPassword('rpassword') && passwordMatch('rpassword','password1'))">
-        <h5 class="text-center">Welcome You</h5>
+        <h5 class="text-center mb-3">Sign up</h5>
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">
@@ -49,7 +49,7 @@
         </div>         
         <button class="btn btn-outline-dark btn-block my-0" onclick="window.location='<?=$loginURL?>'"><img src="../resources/images/google_logo.jpg" class="d-inline rounded-circle mx-auto my-0 py-0"  alt="Login with Google" height="25"> &nbsp;Google Signup
         </button>
-        <div class="text-center mt-2 pl-2 mb-0">
+        <div class="text-center mt-3 pl-2 mb-0">
             Already Registered? <a class="" href="/">Login</a>    
         </div>
     </form>          
