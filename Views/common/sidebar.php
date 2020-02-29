@@ -3,76 +3,93 @@
 		<ul class="nav flex-column">
 			<li class="nav-item border-bottom border-top">
 				<?php if(!isset($_GET['view']) && (Request::uri()=='login')):?>
-					<a class="btn btn-link font-weight-bolder" href="/">
+				<a class="btn btn-link font-weight-bolder" href="/">
+					<i class="fas fa-tools"></i>
+					Dashboard <i class="fas fa-caret-left"></i>
+				</a>
+				<?php else:?>
+					<a class="btn btn-link  text-muted " href="/">
 						<i class="fas fa-tools"></i>
-						Dashboard <i class="fas fa-caret-left"></i>
+						Dashboard
 					</a>
-					<?php else:?>
-						<a class="btn btn-link  text-muted " href="/">
-							<i class="fas fa-tools"></i>
-							Dashboard
-						</a>
-					<?php endif; ?>
-				</li>
-				<li class="nav-item border-bottom " >
-					<?php if(!isset($_GET['view'])):?>
-						<a class="btn btn-link text-muted"  href="/login?view=users">
+				<?php endif; ?>
+			</li>
+			<li class="nav-item border-bottom " >
+				<?php if(!isset($_GET['view'])):?>
+					<a class="btn btn-link text-muted"  href="/login?view=users">
+						<i class="fas fa-users"></i>
+						Users 
+					</a>
+					<?php elseif($_GET['view']=='users'):?>
+						<a class="btn btn-link font-weight-bolder"  href="/login?view=users">
 							<i class="fas fa-users"></i>
-							Users 
+							Users <i class="fas fa-caret-left"></i>
 						</a>
-						<?php elseif($_GET['view']=='users'):?>
-							<a class="btn btn-link font-weight-bolder"  href="/login?view=users">
+						<?php else: ?>
+							<a class="btn btn-link text-muted"  href="/login?view=users">
 								<i class="fas fa-users"></i>
-								Users <i class="fas fa-caret-left"></i>
+								Users 
 							</a>
-							<?php else: ?>
-								<a class="btn btn-link text-muted"  href="/login?view=users">
-									<i class="fas fa-users"></i>
-									Users 
+						<?php endif;?>
+					</li>
+					<li class="nav-item border-bottom ">
+						<?php if(!isset($_GET['view'])):?>
+							<a class="btn btn-link text-muted" href="/login?view=categories">
+								<i class="fas fa-list"></i>
+								Categories 
+							</a>
+							<?php elseif($_GET['view']=='categories'):?>
+								<a class="btn btn-link font-weight-bolder"  href="/login?view=categories">	<i class="fas fa-list"></i>
+									Categories <i class="fas fa-caret-left"></i>
+								</a>							
+								<?php else: ?>
+									<a class="btn btn-link text-muted" href="/login?view=categories">
+										<i class="fas fa-list"></i>
+										Categories 
+									</a>
+								<?php endif;?>
+							</li>
+							<li class="nav-item border-bottom ">
+								<?php 
+								if((Request::uri()=='editbook')): ?>
+									<a class="btn btn-link text-muted" href="/login?view=books">
+										<i class="fas fa-book"></i>
+									Books</i>
 								</a>
-							<?php endif;?>
-						</li>
-						<li class="nav-item border-bottom ">
-							<?php if(!isset($_GET['view'])):?>
-								<a class="btn btn-link text-muted" href="/login?view=categories">
-									<i class="fas fa-list"></i>
-									Categories 
+								<a class="ml-4 btn btn-link text-muted" href="/addbook">
+									<i class="fas fa-plus"></i>
+									Add Book
 								</a>
-								<?php elseif($_GET['view']=='categories'):?>
-									<a class="btn btn-link font-weight-bolder"  href="/login?view=categories">	<i class="fas fa-list"></i>
-										Categories <i class="fas fa-caret-left"></i>
-									</a>							
-									<?php else: ?>
-										<a class="btn btn-link text-muted" href="/login?view=categories">
-											<i class="fas fa-list"></i>
-											Categories 
-										</a>
-									<?php endif;?>
-								</li>
-								<li class="nav-item border-bottom ">
-									<?php 
-									if(Request::uri()=='editbook') :?>
+								<a class="ml-4 btn btn-link font-weight-bolder" href="/login?view=books">
+									<i class="fas fa-edit"></i>
+									Edit Book<i class="fas fa-caret-left"></i>
+								</a>
+								<?php elseif((Request::uri()=='addbook')): ?>
+									<a class="btn btn-link text-muted" href="/login?view=books">
+										<i class="fas fa-book"></i>
+									Books</i>
+								</a>
+								<a class="ml-4 btn btn-link font-weight-bolder" href="/addbook">
+									<i class="fas fa-plus"></i>
+									Add Book<i class="fas fa-caret-left"></i>
+								</a>
+								<?php elseif(!isset($_GET['view'])):?>
+									<a class="btn btn-link text-muted" href="/login?view=books">
+										<i class="fas fa-book"></i>
+										Books
+									</a>
+									<?php elseif($_GET['view']=='books'):?>
 										<a class="btn btn-link font-weight-bolder" href="/login?view=books">
-												<i class="fas fa-book"></i>
-												Books <i class="fas fa-caret-left"></i>
-											</a>
-									<?php elseif(!isset($_GET['view'])):?>
-										<a class="btn btn-link text-muted" href="/login?view=books">
 											<i class="fas fa-book"></i>
-											Books
+											Books <i class="fas fa-caret-left"></i>
 										</a>
-										<?php elseif($_GET['view']=='books'):?>
-											<a class="btn btn-link font-weight-bolder" href="/login?view=books">
+										<?php else: ?>
+											<a class="btn btn-link text-muted" href="/login?view=books">
 												<i class="fas fa-book"></i>
-												Books <i class="fas fa-caret-left"></i>
+												Books
 											</a>
-											<?php else: ?>
-												<a class="btn btn-link text-muted" href="/login?view=books">
-													<i class="fas fa-book"></i>
-													Books
-												</a>
-											<?php endif;?>
-										</li>
-									</ul>
-								</div>
-							</nav>
+										<?php endif;?>
+									</li>
+								</ul>
+							</div>
+						</nav>

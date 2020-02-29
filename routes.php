@@ -3,7 +3,6 @@ $router->define([
 	''=>'Controllers/common/home.php',
 	'index.php'=>'Controllers/common/home.php',
 	'index'=>'Controllers/common/home.php',
-	'reset_password'=>'Views/users/passwordResetForm.php',
 	'splashmsg'=>'Views/common/splashmsg.php',
 	'change_password'=>'Controllers/auth/updatePassword.php',
 	'send_reset_password_link'=>'Controllers/auth/sendResetPasswordLink.php',
