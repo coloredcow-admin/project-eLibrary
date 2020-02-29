@@ -5,7 +5,7 @@
 <div class="d-none d-md-block col-1"></div>
 <div class="border border-secondary p-4 rounded bg-white col-sm-6 col-9 col-md-4 col-lg-3 mx-auto ml-md-5">
     <form action="/registration" method="post" onsubmit="return (checkFieldName('rname') && checkFieldEmail('remailid') && checkFieldPassword('rpassword') && passwordMatch('rpassword','password1'))">
-        <<h5 class="text-center mb-3">Sign up</h5>
+        <h5 class="text-center mb-3">Sign up</h5>
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">
