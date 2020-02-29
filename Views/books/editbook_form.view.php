@@ -1,6 +1,5 @@
 <?php
 $msg1=$msg2=$msg3=$msg4=NULL;
-
 ?>
 <div class="container-fluid bg-light">
   <div class="row">
@@ -66,8 +65,8 @@ $msg1=$msg2=$msg3=$msg4=NULL;
           <label class="custom-file-label" for="book_cover">New Book Cover #</label>
           <small class="form-text text-muted ml-1"># Size Must Be Less Than 1MB</small> <small class="form-text text-muted text-danger" id='errorbook_cover'><?=$msg4?></small>
         </div>
-        <input type="hidden" name="bid"   value="<?=$bid?>">
-        <input type="hidden" name="cover_name"   value="<?=$cover?>">
+        <input type="hidden" name="bid" value="<?=$bid?>">
+        <input type="hidden" name="cover_name" value="<?=$cover?>">
       </div>
       <div class="modal-footer">
         <a class="btn btn-secondary" href='/login?view=books'>Close</a>
