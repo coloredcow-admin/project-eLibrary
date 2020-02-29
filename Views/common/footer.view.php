@@ -1,5 +1,5 @@
 <footer class="d-flex align-content-end row justify-content-center font-weight-bold myfooter" >
-    <div class= "container" >
+    <div class= "container-fluid" >
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-black">
             <p class="mt-4" >This web-application is developed to serve the readers with a wide variety of books and manage their read list </p>
