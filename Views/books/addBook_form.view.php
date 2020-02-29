@@ -25,7 +25,18 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                  <small class="form-text text-muted text-danger" id='errorbook_edition'><?=$msg3?></small>  
                </div>
              </div>
-             <div class="form-group">&nbsp;&nbsp;&nbsp;Categories <small class="text-muted ">(Optional)</small> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a>
+             <select class="form-control" multiple="multiple">
+              <option selected="selected">orange</option>
+              <option>white</option>
+              <option selected="selected">purple</option>
+            </select>
+            <script type="text/javascript">
+              $(".js-example-tokenizer").select2({
+                tags: true,
+                tokenSeparators: [',', ' ']
+              })
+            </script>
+            <div class="form-group">&nbsp;&nbsp;&nbsp;Categories <small class="text-muted ">(Optional)</small> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a>
               <div class="input-group" id="dynamic-cat">
                <?php 
                $i=1;
