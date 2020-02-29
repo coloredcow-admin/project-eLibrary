@@ -1,5 +1,6 @@
 <?php
 $msg1=$msg2=$msg3=$msg4=NULL;
+
 ?>
 <div class="container-fluid bg-light">
   <div class="row">

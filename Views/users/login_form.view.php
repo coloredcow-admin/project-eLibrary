@@ -19,7 +19,7 @@
 			<input type="password" class="form-control" id="password" placeholder="Enter Password *" name="password" value='<?= $password ?>' onkeyup="checkFieldPassword('password')" onblur="checkFieldPassword('password')">
 		</div>
 		<small class="form-text text-muted text-danger" id="errorpassword"><?= $msg2 ?></small>
-		<small class="form-text text-muted text-right"><a href="/reset_password">Forgot Password?</a></small>
+		<small class="form-text text-muted text-right"><a href='javascript:void(0)'data-toggle="modal" data-target="#resetPasswordModal" title='Click here to get password reset link.'>Forgot Password?</a></small>
 				<button class="btn btn-primary btn-block mt-2" type="submit">Login</button>
 		<div class="row mx-1 my-1">
 			<hr class="d-inline col">
