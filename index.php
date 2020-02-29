@@ -9,7 +9,7 @@
 	?> 
 </head>
 <body class="h-100 w-100 m-0 p-0" style="overflow-x:hidden;">
-	<button onclick="topFunction()" class='btn btn-outline-dark position-fixed' style="display:none;bottom:80px; right:22px; z-index: 99999999;" id="top" title="Go to top"><i class="fa fa-arrow-alt-circle-up h5 pt-1 m-0"></i></button>
+	<button onclick="topFunction()" class='btn btn-outline-dark position-fixed' style="display:none;bottom:60px; right:22px; z-index: 99999999;" id="top" title="Go to top"><i class="fa fa-arrow-alt-circle-up h5 pt-1 m-0"></i></button>
 	<?php  
 	require 'core/bootstrap.php';
 	require __dir__.'/Controllers/auth/checkAuthentication.php';

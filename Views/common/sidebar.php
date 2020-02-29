@@ -1,4 +1,4 @@
-<nav class="col-md-2 py-5 d-none d-lg-block position-fixed align-self-center bg-white" style="top: 0; bottom:0; z-index:2;">
+<nav class="col-md-2 py-5 d-none d-lg-block position-fixed align-self-center bg-white" style="top: 0; bottom:0; z-index:2 !important;">
 	<div class="pt-5 mt-5" >
 		<ul class="nav flex-column">
 			<li class="nav-item border-bottom border-top">
