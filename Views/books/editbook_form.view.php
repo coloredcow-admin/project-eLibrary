@@ -27,8 +27,8 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                 <input type="text" class="form-control" id="edition" name="edition" value="<?=$edition?>" onkeyup="checkFieldName('edition')">
                 <small class="form-text text-muted text-danger" id='erroredition'><?=$msg3?></small>
               </div>
-              <div class="form-group">Categories <small class="text-muted">(Optional)</small>
-               <a href='#'  data-toggle="modal" data-target="#addCategoryModal"  data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a><div class="input-group" id="dynamic-cat">
+              <div class="form-group"> <label for="dynamic-cat">Categories</label> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a>
+                <select class="form-control" id="dynamic-cat" placeholder="Categories">
                  <?php 
                  $i=1;
                  while($categoryFetch=mysqli_fetch_assoc($categories)):  
@@ -40,24 +40,18 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                   $check=NULL;
                   foreach ($ch as $val) {
                    if(in_array($cid, $val))
-                     $check='checked';
+                     $check='selected';
                  }
                  ?>
-                 <label <?="for='{$makeId}'"?> class='form-control'><?=$cname?> <input type='checkbox'  <?="name='{$makeId}' id='{$makeId}'  value='{$cid}' {$check}"?> style="width:15px; height:15px;"></label>
+                 <option <?="name='{$makeId}' id='{$makeId}'  value='{$cid}' "?> ><?=$cname?></option>
                  <?php 
-                 if($i%2==0):
-                  ?>
-                </div>
-                <div class="input-group">
-                  <?php
-                endif;
-                $i++;
-              endwhile;
-              ?>
-            </div>
-          </div>
-          <div class="row mb-3"><?php $fetch='../../resources/uploads/'.$cover.".jpg";?>
-          <label for="book_cover" class='mx-auto mt-2 align-self-center' >
+                 $i++;
+               endwhile;
+               ?>
+             </select>
+           </div>
+           <div class="row mb-3"><?php $fetch='../../resources/uploads/'.$cover.".jpg";?>
+           <label for="book_cover" class='mx-auto mt-2 align-self-center' >
             <img id="cover_image"  style='height:255px; width:170px;' <?="src='{$fetch}'";?> for='' alt='Book Cover'> 
           </label>
         </div>

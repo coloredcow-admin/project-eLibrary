@@ -15,7 +15,7 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                 <input type="text" class="form-control" id="book_name" name="book_name" placeholder="Enter Book Name *"  onkeyup="checkFieldName('book_name')">
                 <small class="form-text text-muted text-danger" id='errorbook_name'><?=$msg1?></small>   
               </div>
-              <div class="form-group row">
+              <div class="form-group row mb-1">
                <div class="col mr-0 pr-0">
                  <input type="text" class="form-control" id="author_name" name="author_name" placeholder="Enter Author Name *" onkeyup="checkFieldName('author_name')">
                  <small class="form-text text-muted text-danger" id='errorauthor_name'><?=$msg2?></small>  
@@ -25,19 +25,8 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                  <small class="form-text text-muted text-danger" id='errorbook_edition'><?=$msg3?></small>  
                </div>
              </div>
-             <select class="form-control" multiple="multiple">
-              <option selected="selected">orange</option>
-              <option>white</option>
-              <option selected="selected">purple</option>
-            </select>
-            <script type="text/javascript">
-              $(".js-example-tokenizer").select2({
-                tags: true,
-                tokenSeparators: [',', ' ']
-              })
-            </script>
-            <div class="form-group">&nbsp;&nbsp;&nbsp;Categories <small class="text-muted ">(Optional)</small> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a>
-              <div class="input-group" id="dynamic-cat">
+              <div class="form-group"> <label for="dynamic-cat">Categories</label> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a> <small class="text-muted ">(Optional)</small> 
+              <select class="form-control" id="dynamic-cat">
                <?php 
                $i=1;
                while($categoryFetch=mysqli_fetch_assoc($categories)):  
@@ -45,17 +34,12 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                 $cname=$categoryFetch['category_name'];
                 $cid=$categoryFetch['cid'];
                 ?>
-                <label <?="for='{$makeId}'"?> class='form-control'><?=$cname?> <input  type='checkbox' <?="name='{$makeId}' id='{$makeId}'  value='{$cid}' "?> style="width:15px; height:15px;"></label>
-                <?php
-                if($i%2==0):?>
-                </div>
-                <div class="input-group">
+                 <option <?="name='{$makeId}' id='{$makeId}'  value='{$cid}' "?> ><?=$cname?></option>
                   <?php
-                endif;
                 $i++;
               endwhile;
               ?>
-            </div>
+            </select>
           </div>
           <div class="custom-file">
             <input type="file" class="custom-file-input" id="book_cover" accept="image/*" name="book_cover" onchange="checkFileInput('book_cover')">
