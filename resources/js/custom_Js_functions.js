@@ -43,18 +43,24 @@ function checkFileInput(id){
      return false; 
    }
  }
- if (fieldId.files[0].size> 1048576 || fieldId.files[0].size== 0){
-  errorId.innerHTML="<div class='text-danger'>Invalid File Size</div>";
+ if(fieldId.value==''){
+  errorId.innerHTML="<div class='text-danger'>Image is required</div>";
+  fieldId.classList.remove("is-valid");
+  fieldId.classList.add("is-invalid");
+  return false;
+}
+else if(fieldId.files[0].size > 1048576){
+  errorId.innerHTML="<div class='text-danger'>Image Size is greater then required</div>";
   fieldId.classList.remove("is-valid");
   fieldId.classList.add("is-invalid");
   return false;
 }
 else{
-  errorId.innerHTML="";
-  fieldId.classList.remove("is-invalid");
-  fieldId.classList.add("is-valid");
-  return true;
-}  
+ errorId.innerHTML="";
+ fieldId.classList.remove("is-invalid");
+ fieldId.classList.add("is-valid");
+ return true;
+}
 }
 function checkFieldName(id){
   var fieldId=document.getElementById(id);
@@ -262,16 +268,38 @@ $('#addCategoryModal').on('show.bs.modal', function (event) {
   var modal = $(this)
   modal.find('.modal-body #randdata').val(custDisp)
 })
+function hideAllCategories(){
+  var listAll=document.getElementById('listAll');
+  listAll.classList.add('cust-hide');
+}
 function dropAllCategories(){
   var listAll=document.getElementById('listAll');
   listAll.classList.toggle('cust-hide');
 }
-function selectMe(cid,cname){
+function selectMe(cid,cname,makeId){
+  document.getElementById('li_'+cid).classList.toggle('cust-hide');
   var selectedOption=document.getElementById('selected');
   if(selectedOption.innerHTML=='Select from here'){
-    selectedOption.innerHTML="<label for='' class='badge badge-secondary my-auto mx-1'>"+cname+" <i class='fa fa-times'></i><input name='' type='checkbox' class='cust-hide' checked></label>";
+    selectedOption.innerHTML="<label for='"+makeId+"' id='l"+makeId+"' class='badge badge-secondary my-auto mx-1'>"+cname+" <i class='fa fa-times' onclick='deselect(\""+makeId+"\",\""+cid+"\")'></i><input name='"+makeId+"' id='"+makeId+"' value='"+cid+"' type='checkbox' class='cust-hide' checked></label>";
   }
   else{
-     selectedOption.innerHTML+="<label for='' class='badge badge-secondary my-auto mx-1'>"+cname+" <i  class='fa fa-times'></i><input name='' type='checkbox'  class='cust-hide'  checked></label>";
+    var list=selectedOption.children;
+    for (var i = 0; i < list.length; i++) {
+      var element = list[i];
+      var elementid=element.children[1].id;
+      if(elementid==makeId){
+        deselect(makeId,cid);
+        return;
+      }
+    }
+    selectedOption.innerHTML+="<label for='"+makeId+"'  id='l"+makeId+"' class='badge badge-secondary my-auto mx-1'>"+cname+" <i  class='fa fa-times'  onclick='deselect(\""+makeId+"\",\""+cid+"\")'></i><input name='"+makeId+"'  value='"+cid+"' id='"+makeId+"' type='checkbox'  class='cust-hide'  checked></label>";
   }
+}
+function deselect(id,cid){
+ document.getElementById('li_'+cid).classList.toggle('cust-hide');
+ var selectedOption=document.getElementById('selected');
+ var removeMe=document.getElementById('l'+id);
+ selectedOption.removeChild(removeMe);
+ if(selectedOption.children.length==0)
+  selectedOption.innerHTML='Select from here';
 }

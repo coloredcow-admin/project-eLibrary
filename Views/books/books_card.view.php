@@ -159,8 +159,6 @@
           <?php endif;?>
         </div>
       <?php endif;?>
-      <?php 
-      require __dir__.'/'.'../../Views/books/addBook_form.view.php'; ?>
     </div>
   </div>
   <style>
