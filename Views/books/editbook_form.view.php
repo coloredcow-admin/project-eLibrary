@@ -1,7 +1,3 @@
-<?php
-$msg1=$msg2=$msg3=$msg4=NULL;
-
-?>
 <div class="container-fluid bg-light">
   <div class="row">
     <div class="col-md m-3">
@@ -64,10 +60,10 @@ $msg1=$msg2=$msg3=$msg4=NULL;
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="book_cover" accept="image/*" name="book_cover" onchange="checkFileInput('book_cover')">
           <label class="custom-file-label" for="book_cover">New Book Cover #</label>
-          <small class="form-text text-muted ml-1"># Size Must Be Less Than 1MB</small> <small class="form-text text-muted text-danger" id='errorbook_cover'><?=$msg4?></small>
+          <small class="form-text text-muted ml-1"># Size Must Be Less Than 1MB</small> <small class="form-text text-muted text-danger" id='errorbook_cover'></small>
         </div>
-        <input type="hidden" name="bid"   value="<?=$bid?>">
-        <input type="hidden" name="cover_name"   value="<?=$cover?>">
+        <input type="hidden" name="bid" value="<?=$bid?>">
+        <input type="hidden" name="cover_name" value="<?=$cover?>">
       </div>
       <div class="modal-footer">
         <a class="btn btn-secondary" href='/login?view=books'>Close</a>
