@@ -16,14 +16,16 @@
 	require __dir__.'/Views/common/header.view.php';
 	$loginURL = $gClient->createAuthUrl();
 	require Router::load('routes.php')->direct(Request::uri());
-	 if((Request::uri()!='') && (Request::uri()!='index') && (Request::uri()!='index.php') && !(isset($_GET['register']))):	
+	if((Request::uri()!='') && (Request::uri()!='index') && (Request::uri()!='index.php') && !(isset($_GET['register']))):	
 		require __dir__.'/Views/common/footer.view.php';
-	 endif;
-
-	require __dir__.'/resources/bootstrap/bootstrap4_js.php';	
-	require __dir__.'/'.'Views/common/modals.view.php';
-	?>
-		<script type="text/javascript" src='resources/js/custom_js_functions.js'></script>
-	</body>
-	</html>
+endif;
+require __dir__.'/'.'Views/common/modals.view.php';
+?>
+<?php 	
+require __dir__.'/resources/bootstrap/bootstrap4_js.php';	
+?>
+<script src="resources/js/tilt.jquery.min.js"></script>
+<script type="text/javascript" src='resources/js/custom_js_functions.js'></script>
+</body>
+</html>
 

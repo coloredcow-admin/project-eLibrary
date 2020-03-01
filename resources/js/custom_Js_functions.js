@@ -1,3 +1,6 @@
+$(".js-tilt").tilt({
+  scale: 1.1
+});
 function passwordMatch(id1,id2){
   var fieldId1=document.getElementById(id1);
   var fieldId2=document.getElementById(id2);

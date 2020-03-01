@@ -8,6 +8,5 @@ require __dir__.'/'.'Model/Mail.php';
 require __dir__.'/'."../resources/gmail_login/GoogleAPI/vendor/autoload.php";
 require __dir__.'/'."configs/GoogleAPI/config.php";
 require __dir__.'/Router.php';
-require __dir__.'/Request.php';
-require __dir__.'/../resources/bootstrap/bootstrap4_js.php';	
+require __dir__.'/Request.php';	
 ?>
