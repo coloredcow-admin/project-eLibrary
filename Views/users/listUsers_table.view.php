@@ -14,7 +14,8 @@
               <thead>
                 <tr class="text-center">
                   <th scope="col">#</th>
-                  <th scope="col" class="text-left">Full Name</th>
+                  <th scope="col" class="text-left pl-0 pl-xl-5">Full Name</th>
+                  <th scope="col" class="text-left pl-0 pl-xl-5">Email Address</th>
                   <th scope="col">No. of Books Read</th>
                   <th scope="col">Account Created</th>
                   <th scope="col"></th>
@@ -29,7 +30,8 @@
                   ?>
                   <tr>
                     <th class="text-center"><?=++$i?></th>
-                    <td><?=$row['user_name'] ?></td>
+                    <td class="text-left  pl-0 pl-xl-5"><?=$row['user_name'] ?></td>
+                    <td class="text-left  pl-0 pl-xl-5"><?=$row['email_id'] ?></td>
                     <td class="text-center"><?=$no_of_books_read ?></td>
                     <td class="text-center"><?=$row['last_login'] ?></td>
                     <td class="text-center">
@@ -48,7 +50,7 @@
         <div class="row col-6 offset-6">
           <?php 
           if(($i-$limit)>0):
-            $offset1=$offset-$limit;
+            $offset1 = $offset-$limit;
             ?><a href="/login?offset=<?=$offset1 ?>" class='col text-center ml-5 form-control'>Previous</a><?php endif;?>
             <?php  if(($i+1)<$total):
               $offset2=$offset+$limit;
