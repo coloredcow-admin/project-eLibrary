@@ -64,7 +64,7 @@ if(isset($_GET['listbooks']))
 								<div class="card-body">
 									<h1 class="card-title pricing-card-title"><?=$total_users?> </h1>
 
-									<a href='/login?view=users' class="btn btn-lg btn-block btn-link">Monitor <i class="fas fa-user-edit"></i>
+									<a href='/login?view=users' class="btn btn-lg btn-block btn-link">More info <i class="fas fa-info-circle"></i>
 									</a>
 								</div>
 							</div>
@@ -89,7 +89,7 @@ if(isset($_GET['listbooks']))
 							</div>
 						</div>
 						<?php elseif($_GET['view']=='books'): ?>
-							<h2 >Books <a href='#' data-toggle="modal" data-target="#addBookModal" id='btn-addBook'><i class="fas fa-plus-square h4  text-primary"></i></a>
+							<h2>Books <a href='/addbook'><i class="fas fa-plus-square h4  text-primary"></i></a>
 							</h2>	
 						</div>
 						<?php require __dir__.'/'.'../books/ListBooks.php';?>
@@ -100,7 +100,7 @@ if(isset($_GET['listbooks']))
 						<?php require __dir__.'/'.'../users/ListAllUsers.php'; ?>
 						<?php elseif($_GET['view']=='categories'): ?>
 							<h2>Categories
-								<a href='#'  data-toggle="modal" data-target="#addCategoryModal"><i class="fas fa-plus-square h4  text-primary"></i></a></h2>
+								<a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="reload"><i class="fas fa-plus-square h4 text-primary"></i></a></h2>
 							</div>
 
 							<?php require __dir__.'/'.'../bookCategories/ListCategories.php';
