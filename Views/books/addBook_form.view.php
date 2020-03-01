@@ -25,42 +25,45 @@ $msg1=$msg2=$msg3=$msg4=NULL;
                  <small class="form-text text-muted text-danger" id='errorbook_edition'><?=$msg3?></small>  
                </div>
              </div>
-              <div class="form-group"> <label for="dynamic-cat">Categories</label> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a> <small class="text-muted ">(Optional)</small> 
-              <select class="form-control" id="dynamic-cat">
-               <?php 
-               $i=1;
-               while($categoryFetch=mysqli_fetch_assoc($categories)):  
-                $makeId='cid'.$i;
-                $cname=$categoryFetch['category_name'];
-                $cid=$categoryFetch['cid'];
-                ?>
-                 <option <?="name='{$makeId}' id='{$makeId}'  value='{$cid}' "?> ><?=$cname?></option>
-                  <?php
-                $i++;
-              endwhile;
-              ?>
-            </select>
+             <div class="form-group"> <label for="dynamic-cat">Categories</label> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a> <small class="text-muted ">(Optional)</small> 
+              <span class="form-control custom-select h-auto"  style="cursor: pointer;" id="dynamic-cat" onclick="dropAllCategories();">     
+                <span id="selected" class="w-auto">Select from here</span>
+                <ul id="listAll" class="cust-hide cust-select">
+                  <?php 
+                  $i=1;
+                  while($categoryFetch=mysqli_fetch_assoc($categories)):  
+                    $makeId='cid'.$i;
+                    $cname=$categoryFetch['category_name'];
+                    $cid=$categoryFetch['cid'];
+                    ?>
+                    <li onclick="selectMe('<?=$cid?>','<?=$cname?>')" <?="name='{$makeId}' id='{$makeId}'  value='{$cid}' "?> ><?=$cname?></li>
+                    <?php
+                    $i++;
+                  endwhile;
+                  ?>
+                </ul>
+              </span>
+            </div>
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="book_cover" accept="image/*" name="book_cover" onchange="checkFileInput('book_cover')">
+              <label class="custom-file-label" for="book_cover">Book Cover * </label>
+              <small class="form-text text-muted mt-0 ml-2">Note* - Size Must Be Less Than 1MB.</small>
+              <small class="form-text text-muted text-danger" id='errorbook_cover'><?=$msg4?></small>
+            </div>
+            <div class="row">
+              <label for="book_cover" class='mx-auto mt-2 align-self-center' >
+                <img id="cover_image"  style='height:255px; width:170px;'> 
+              </label>
+            </div>
           </div>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="book_cover" accept="image/*" name="book_cover" onchange="checkFileInput('book_cover')">
-            <label class="custom-file-label" for="book_cover">Book Cover * </label>
-            <small class="form-text text-muted mt-0 ml-2">Note* - Size Must Be Less Than 1MB.</small>
-            <small class="form-text text-muted text-danger" id='errorbook_cover'><?=$msg4?></small>
-          </div>
-          <div class="row">
-            <label for="book_cover" class='mx-auto mt-2 align-self-center' >
-              <img id="cover_image"  style='height:255px; width:170px;'> 
-            </label>
+          <div class="modal-footer">
+            <a class="btn btn-secondary" href='/login?view=books'>Close</a>
+            <button type="submit" class="btn btn-primary">Add Book</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <a class="btn btn-secondary" href='/login?view=books'>Close</a>
-          <button type="submit" class="btn btn-primary">Add Book</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
-</div>
 </div>
 </div>
 <?php  require __dir__.'/'.'../../Views/bookCategories/addCategory_form.view.php';?>

@@ -2,7 +2,7 @@
 	session_start();
 }
 ?>
-<nav class="p-3 px-5 bg-white border-bottom position-sticky sticky-top w-100 shadow-sm navbar navbar-expand-sm navbar-light" style="z-index:3;">
+<nav class="p-3 px-5 bg-white border-bottom position-sticky sticky-top w-100 shadow-sm navbar navbar-expand-sm navbar-light" style="z-index:4;">
 	<a href="/" class="navbar-brand" title='Go to home'>
 		<h2 style="font-family: Georgia;" class="">eLibrary</h2>
 	</a>

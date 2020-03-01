@@ -262,3 +262,16 @@ $('#addCategoryModal').on('show.bs.modal', function (event) {
   var modal = $(this)
   modal.find('.modal-body #randdata').val(custDisp)
 })
+function dropAllCategories(){
+  var listAll=document.getElementById('listAll');
+  listAll.classList.toggle('cust-hide');
+}
+function selectMe(cid,cname){
+  var selectedOption=document.getElementById('selected');
+  if(selectedOption.innerHTML=='Select from here'){
+    selectedOption.innerHTML="<label for='' class='badge badge-secondary my-auto mx-1'>"+cname+" <i class='fa fa-times'></i><input name='' type='checkbox' class='cust-hide' checked></label>";
+  }
+  else{
+     selectedOption.innerHTML+="<label for='' class='badge badge-secondary my-auto mx-1'>"+cname+" <i  class='fa fa-times'></i><input name='' type='checkbox'  class='cust-hide'  checked></label>";
+  }
+}

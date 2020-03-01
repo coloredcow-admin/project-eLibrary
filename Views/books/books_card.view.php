@@ -60,7 +60,8 @@
                     <?php endwhile;?>
                   </p>
                   <div class="card-text mb-auto" id="<?php echo "read_type".$bid;?>">
-                    <?php if($_SESSION['type']=='inreader'): 
+                    <?php 
+                    if($_SESSION['type']=='inreader'): 
                       $booksRead=$user->fetchBooks($uid);
                       $ch=$booksRead->fetch_all();
                       $check=NULL;
@@ -79,7 +80,6 @@
                       <a <?="href='/editbook?bid={$bid}'"?> class='mx-auto card-link' title='edit this book'><i class="fa fa-edit">  </i></a>
                       <a href='javascript:void(0)' class="text-danger" data-toggle="modal" data-target="#deleteBookModal" data-bname="<?=$row['book_name']?>" data-bid="<?=$bid?>" title='delete this book'>Delete</a>
                     <?php endif; ?>
-
                   </div>
                 </div>
               </div>
@@ -159,7 +159,8 @@
           <?php endif;?>
         </div>
       <?php endif;?>
-      <?php  require __dir__.'/'.'../../Views/books/addBook_form.view.php'; ?>
+      <?php 
+      require __dir__.'/'.'../../Views/books/addBook_form.view.php'; ?>
     </div>
   </div>
   <style>
