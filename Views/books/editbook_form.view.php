@@ -23,7 +23,7 @@
                 <input type="text" class="form-control" id="edition" name="edition" value="<?=$edition?>" onfocus='hideAllCategories()' onkeyup="checkFieldName('edition')">
                 <small class="form-text text-muted text-danger" id='erroredition'><?=$msg3?></small>
               </div>
-              <div class="form-group"> <label for="dynamic-cat">Categories</label> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><i class="fa fa-plus-square text-primary"></i></a> <small class="text-muted">(Optional)</small> 
+              <div class="form-group"> <label for="dynamic-cat">Categories</label> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><small><i class="text-primary">Add new</i></small></a> <small class="text-muted">(Optional)</small> 
                 <span class="form-control custom-select h-auto"  style="cursor: pointer;" id="dynamic-cat" onclick="dropAllCategories();">     
                   <?php 
                   $i=1;

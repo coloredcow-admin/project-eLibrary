@@ -247,9 +247,16 @@ function addCategory(){
            location.reload(); 
          }
          else{
-          var new_category='<label for="'+cname+'" class="form-control">'+cname+'<input  type="checkbox" name="'+cname+'" id="'+cname+'"  value="'+cname+'" style="width:15px; height:15px;"></label>';
-          var categories=document.getElementById('dynamic-cat');
-          categories.innerHTML=new_category+categories.innerHTML;
+          var id= "li_"+cid;
+          var countno=document.getElementById("listAll").childElementCount;
+          var makeId="cid"+(countno+1);
+          var onclick="selectMe('"+cid+"','"+cname+"','"+makeId+"')";
+          var node = document.createElement("LI");  
+          node.setAttribute("id", id);  
+          node.setAttribute("onclick",onclick);          
+          var textnode = document.createTextNode(cname);        
+          node.appendChild(textnode);                              
+          document.getElementById("listAll").appendChild(node);  
           $('#addCategoryModal').modal('hide');
         }
 
