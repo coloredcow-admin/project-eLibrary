@@ -2,6 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
+$msg1=$msg2=$msg3=$msg4=NULL;
 $book = new Books();
 $user=new Users;
 if($_SESSION['type']!='inadmin'){

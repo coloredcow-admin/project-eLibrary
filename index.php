@@ -4,6 +4,7 @@
 	<title>eLibrary</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="https://coloredcow.com/wp-content/uploads/2017/03/favicon.png" sizes="32x32">
+	<link rel="stylesheet" href="resources/css/custom_css_properties.css">
 	<?php 
 	require __dir__.'/resources/bootstrap/bootstrap4_css.php';
 	?> 
