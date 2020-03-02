@@ -17,7 +17,7 @@
         <small class="form-text text-muted text-danger" id='errorrname'><?= $msg1 ?></small>
         <div class="input-group">
             <div class="input-group-prepend">
-                <span class="input-group-text">
+              <span class="input-group-text" style="padding-left:10px;">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                 </span>
             </div>
