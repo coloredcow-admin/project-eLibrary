@@ -43,18 +43,24 @@ function checkFileInput(id){
      return false; 
    }
  }
- if (fieldId.files[0].size> 1048576 || fieldId.files[0].size== 0){
-  errorId.innerHTML="<div class='text-danger'>Invalid File Size</div>";
+ if(fieldId.value==''){
+  errorId.innerHTML="<div class='text-danger'>Image is required</div>";
+  fieldId.classList.remove("is-valid");
+  fieldId.classList.add("is-invalid");
+  return false;
+}
+else if(fieldId.files[0].size > 1048576){
+  errorId.innerHTML="<div class='text-danger'>Image Size is greater then required</div>";
   fieldId.classList.remove("is-valid");
   fieldId.classList.add("is-invalid");
   return false;
 }
 else{
-  errorId.innerHTML="";
-  fieldId.classList.remove("is-invalid");
-  fieldId.classList.add("is-valid");
-  return true;
-}  
+ errorId.innerHTML="";
+ fieldId.classList.remove("is-invalid");
+ fieldId.classList.add("is-valid");
+ return true;
+}
 }
 function checkFieldName(id){
   var fieldId=document.getElementById(id);
@@ -227,4 +233,80 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+function addCategory(){
+  if(checkFieldName('category_name')){
+    var cname=document.getElementById('category_name').value;
+    var view=document.getElementById('randdata').value;
+    var xhttp= new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+      if(this.readyState==4&&this.status==200){
+        var stat=this.responseText;
+        if(stat){
+         if(view=="reload"){
+           location.reload(); 
+         }
+         else{
+          var id= "li_"+cid;
+          var countno=document.getElementById("listAll").childElementCount;
+          var makeId="cid"+(countno+1);
+          var onclick="selectMe('"+cid+"','"+cname+"','"+makeId+"')";
+          var node = document.createElement("LI");  
+          node.setAttribute("id", id);  
+          node.setAttribute("onclick",onclick);          
+          var textnode = document.createTextNode(cname);        
+          node.appendChild(textnode);                              
+          document.getElementById("listAll").appendChild(node);  
+          $('#addCategoryModal').modal('hide');
+        }
+
+      }
+    }
+  };
+  xhttp.open("POST","addcat",true);
+  xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  var str_send="&category_name="+cname;
+  xhttp.send(str_send);
+}
+}
+$('#addCategoryModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) 
+  var custDisp = button.data("randdata") 
+  var modal = $(this)
+  modal.find('.modal-body #randdata').val(custDisp)
+})
+function hideAllCategories(){
+  var listAll=document.getElementById('listAll');
+  listAll.classList.add('cust-hide');
+}
+function dropAllCategories(){
+  var listAll=document.getElementById('listAll');
+  listAll.classList.toggle('cust-hide');
+}
+function selectMe(cid,cname,makeId){
+  document.getElementById('li_'+cid).classList.toggle('cust-hide');
+  var selectedOption=document.getElementById('selected');
+  if(selectedOption.innerHTML=='Select from here'){
+    selectedOption.innerHTML="<label for='"+makeId+"' id='l"+makeId+"' class='badge badge-secondary my-auto mx-1'>"+cname+" <i class='fa fa-times' onclick='deselect(\""+makeId+"\",\""+cid+"\")'></i><input name='"+makeId+"' id='"+makeId+"' value='"+cid+"' type='checkbox' class='cust-hide' checked></label>";
+  }
+  else{
+    var list=selectedOption.children;
+    for (var i = 0; i < list.length; i++) {
+      var element = list[i];
+      var elementid=element.children[1].id;
+      if(elementid==makeId){
+        deselect(makeId,cid);
+        return;
+      }
+    }
+    selectedOption.innerHTML+="<label for='"+makeId+"'  id='l"+makeId+"' class='badge badge-secondary my-auto mx-1'>"+cname+" <i  class='fa fa-times'  onclick='deselect(\""+makeId+"\",\""+cid+"\")'></i><input name='"+makeId+"'  value='"+cid+"' id='"+makeId+"' type='checkbox'  class='cust-hide'  checked></label>";
+  }
+}
+function deselect(id,cid){
+ document.getElementById('li_'+cid).classList.toggle('cust-hide');
+ var selectedOption=document.getElementById('selected');
+ var removeMe=document.getElementById('l'+id);
+ selectedOption.removeChild(removeMe);
+ if(selectedOption.children.length==0)
+  selectedOption.innerHTML='Select from here';
 }

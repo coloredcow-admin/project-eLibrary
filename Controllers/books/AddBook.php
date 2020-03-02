@@ -2,9 +2,10 @@
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
-if($_SESSION['type']!='inadmin')
-	header("location:/");
-$book= new Books();
+$msg1=$msg2=$msg3=$msg4=NULL;
+$book = new Books();
+$category = new Categories();
+$categories=$category->fetchCategories();
 if(isset($_POST['book_name']) and isset($_POST['author_name']) and isset($_POST['book_edition'])){
 	$book_name=mysqli_escape_string($conn,$_POST['book_name']);
 	$author_name=mysqli_escape_string($conn,$_POST['author_name']);
@@ -41,8 +42,13 @@ if(isset($_POST['book_name']) and isset($_POST['author_name']) and isset($_POST[
 			header('location:/login?view=books');
 	}
 	else
-			header('location:/login?books=1');
+		header('location:/login?books=1');
 }
-else
-header('location:/');
+elseif($_SESSION['type']=='inadmin'){
+	require __dir__.'/'.'../../Views/common/sidebar.php'; 
+	require __dir__.'/'.'../../Views/books/addbook_form.view.php';
+}
+else{
+	header('location:/');
+}
 ?>

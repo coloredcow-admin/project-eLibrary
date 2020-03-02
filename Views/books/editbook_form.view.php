@@ -1,11 +1,8 @@
-<?php
-$msg1=$msg2=$msg3=$msg4=NULL;
-?>
 <div class="container-fluid bg-light">
   <div class="row">
     <div class="col-md m-3">
       <div class="modal-dialog" role="form">
-        <form action='/editbook' method="POST" enctype="multipart/form-data"  onsubmit="return (checkFieldName('book_name') && checkFieldName('author_name') && checkFieldName('edition') && checkFileInput('book_cover'))">
+        <form action='/editbook' method="POST" enctype="multipart/form-data"  onsubmit="return (checkFieldName('book_name') && checkFieldName('author_name') && checkFieldName('edition'))">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">Edit Book Details</h5>
@@ -13,47 +10,76 @@ $msg1=$msg2=$msg3=$msg4=NULL;
             <div class="modal-body">
               <div class="form-group">
                 <label for="book_name">Book Name</label>
-                <input type="text" class="form-control" id="book_name" name="book_name" value="<?=$book_name?>" onkeyup="checkFieldName('book_name')">
+                <input type="text" class="form-control" id="book_name" name="book_name" value="<?=$book_name?>" onfocus='hideAllCategories()' onkeyup="checkFieldName('book_name')">
                 <small class="form-text text-muted text-danger" id='errorbook_name'><?=$msg1?></small>
               </div>
               <div class="form-group">
                 <label for="author_name">Author Name</label>
-                <input type="text" class="form-control" id="author_name" name="author_name" value="<?=$author_name?>" onkeyup="checkFieldName('author_name')">
+                <input type="text" class="form-control" id="author_name" name="author_name" value="<?=$author_name?>" onfocus='hideAllCategories()' onkeyup="checkFieldName('author_name')">
                 <small class="form-text text-muted text-danger" id='errorauthor_name'><?=$msg2?></small>
               </div>
               <div class="form-group">
                 <label for="edition">Edition</label>
-                <input type="text" class="form-control" id="edition" name="edition" value="<?=$edition?>" onkeyup="checkFieldName('edition')">
+                <input type="text" class="form-control" id="edition" name="edition" value="<?=$edition?>" onfocus='hideAllCategories()' onkeyup="checkFieldName('edition')">
                 <small class="form-text text-muted text-danger" id='erroredition'><?=$msg3?></small>
               </div>
-              <div class="form-group">Categories <small class="text-muted">(Optional)</small>
-               <div class="input-group">
-                 <?php 
-                 $i=1;
-                 while($categoryFetch=mysqli_fetch_assoc($categories)):  
-                  $makeId='cid'.$i;
-                  $cname=$categoryFetch['category_name'];
-                  $cid=$categoryFetch['cid'];
+              <div class="form-group"> <label for="dynamic-cat">Categories</label> <a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="text"><small><i class="text-primary">Add new</i></small></a> <small class="text-muted">(Optional)</small> 
+                <span class="form-control custom-select h-auto"  style="cursor: pointer;" id="dynamic-cat" onclick="dropAllCategories();">     
+                  <?php 
+                  $i=1;
                   $checkedCategories=$book->fetchCategories($bid);
                   $ch=$checkedCategories->fetch_all();
-                  $check=NULL;
-                  foreach ($ch as $val) {
-                   if(in_array($cid, $val))
-                     $check='checked';
-                 }
-                 ?>
-                 <label <?="for='{$makeId}'"?> class='form-control'><?=$cname?> <input type='checkbox'  <?="name='{$makeId}' id='{$makeId}'  value='{$cid}' {$check}"?> style="width:15px; height:15px;"></label>
-                 <?php 
-                 if($i%2==0):
+                  if(count($ch)!=0):?>
+                    <span id="selected" class="w-auto">
+                      <?php 
+                      foreach ($ch as $val) {
+                       $makeId='cid'.$i++;
+                       $selectedCategory=$category->fetchCategory($val[1]);
+                       $cname= $selectedCategory['category_name']; 
+                       $cid= $val[1];
+                       ?>
+                       <label for="<?=$makeId?>" id="l<?=$makeId?>" class="badge badge-secondary my-auto mx-1"><?=$cname?> <i class="fa fa-times" onclick="deselect('<?=$makeId?>','<?=$cid?>')"></i><input name="<?=$makeId?>" value="<?=$cid?>" id="<?=$makeId?>" type="checkbox" class="cust-hide" checked></label>
+                     <?php }
+                     ?>
+                   </span>
+                   <?php else:?>
+                    <span id="selected" class="w-auto">Select from here</span>
+                  <?php endif;
                   ?>
-                </div>
-                <div class='input-group'>
-                  <?php
-                endif;
-                $i++;
-              endwhile;
-              ?>
-            </div>
+                  <ul id="listAll" class="cust-hide cust-select">
+                    <?php
+                    while($categoryFetch=mysqli_fetch_assoc($categories)):  
+                      $makeId='cid'.$i;
+                      $cname=$categoryFetch['category_name'];
+                      $cid=$categoryFetch['cid'];
+                      $checkedCategories=$book->fetchCategories($bid);
+                      $ch=$checkedCategories->fetch_all();
+                      $check=NULL;
+                      ?>
+                      <?php
+                      if(count($ch)==0): ?>
+                       <li id='<?php echo "li_".$cid; ?>' onclick="selectMe('<?=$cid?>','<?=$cname?>','<?=$makeId?>')" ><?=$cname?></li>
+                     <?php else:
+                       foreach ($ch as $val) {
+                         if(in_array($cid, $val)):
+                          $check=TRUE;
+                          ?>
+                          <li id='<?php echo "li_".$cid; ?>' onclick="selectMe('<?=$cid?>','<?=$cname?>','<?=$makeId?>')" class='cust-hide'><?=$cname?></li>
+                          <?php 
+                        endif;
+                        ?>
+                      <?php } 
+                      if(!$check):
+                        ?>  
+                        <li id='<?php echo "li_".$cid; ?>' onclick="selectMe('<?=$cid?>','<?=$cname?>','<?=$makeId?>')" ><?=$cname?></li> 
+                        <?php
+                      endif;
+                    endif;
+                  $i++;
+                endwhile;
+                ?>
+              </ul>
+            </span>
           </div>
           <div class="row mb-3"><?php $fetch='../../resources/uploads/'.$cover.".jpg";?>
           <label for="book_cover" class='mx-auto mt-2 align-self-center' >
@@ -69,8 +95,8 @@ $msg1=$msg2=$msg3=$msg4=NULL;
         <input type="hidden" name="cover_name"   value="<?=$cover?>">
       </div>
       <div class="modal-footer">
-        <a class="btn btn-secondary" href='/login?view=books'>Close</a>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a class="btn btn-secondary" onfocus='hideAllCategories()' href='/login?view=books'>Close</a>
+        <button type="submit"  onfocus='hideAllCategories()'class="btn btn-primary">Save Changes</button>
       </div>
     </div>
   </form>
@@ -78,4 +104,4 @@ $msg1=$msg2=$msg3=$msg4=NULL;
 </div>
 </div>
 </div>
-
+<?php  require __dir__.'/'.'../../Views/bookCategories/addCategory_form.view.php';?>
