@@ -53,10 +53,6 @@
               </label>
             </div>
           </div>
-          <div class="row">
-            <label for="book_cover" class='mx-auto mt-2 align-self-center' >
-              <img id="cover_image"  style='height:255px; width:170px;'> 
-            </label>
           <div class="modal-footer">
             <a class="btn btn-secondary"   onfocus='hideAllCategories()' href='/login?view=books'>Close</a>
             <button type="submit"   onfocus='hideAllCategories()' class="btn btn-primary">Add Book</button>
