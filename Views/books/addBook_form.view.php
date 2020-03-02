@@ -1,5 +1,4 @@
 <div class="container-fluid bg-light">
-  <h1>Commiting Suicide</h1>
   <div class="row">
     <div class="col-md m-3">
       <div class="modal-dialog" role="form">
