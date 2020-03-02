@@ -1,0 +1,29 @@
+.cust-hide{
+	display: none;
+}
+.cust-select{
+	position: relative;
+	z-index: 3;
+	background-color:#fff;
+	margin:0;
+	border: 1px solid #ccc;
+	border-radius:5px;
+	margin-top:6px;
+	width:110%;
+	margin-left:-13px;   
+	padding:0; 
+	margin-bottom:-7px; 
+}
+.cust-select>li:hover{
+	background-color: #3080f0;
+	color:white;
+	font-weight:bolder;  
+}
+.cust-select>li{
+	list-style-type:none; 
+	padding:5px 10px;   
+}
+.cust-cross{
+	background-color:#000;
+	border:5px solid #000;  
+}

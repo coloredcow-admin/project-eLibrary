@@ -114,9 +114,8 @@ if(isset($_GET['listbooks']))
 								<div class="text-center border-bottom">
 									<h4 class="my-2 pb-2 font-weight-normal">My Books </h4></div> 
 									<?php
-
 									require __dir__.'/'.'../books/UserBooks.php';	
-								}else {?>
+								}else { ?>
 									<div class="text-center border-bottom">
 										<h4 class="my-2 pb-2 font-weight-normal">Books </h4></div> <?php
 										require __dir__.'/'.'../books/ListBooks.php';	
@@ -126,7 +125,6 @@ if(isset($_GET['listbooks']))
 								endif;
 							endif;
 							?>
-
 						</main>
 					</div>
 				</div>

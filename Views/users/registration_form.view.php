@@ -1,8 +1,9 @@
-<div class="login100-pic js-tilt mx-auto" data-tilt style="padding-bottom:10px; text-align:center;">
-    <img src="https://pageturnprohome.files.wordpress.com/2019/07/compressediphone.png" alt="IMG" style="max-width: 200px; height:auto;" />
-    <h6 style="padding-top: 5px;">Complete Digital Library Platform for Personalized Learning</h6>
+<div class="login100-pic js-tilt d-md-block d-none col-sm-6 col-9 col-md-3 col-lg-3 col-xl-3" data-tilt style="padding-bottom:10px; text-align:center; margin-left:20%;">
+    <img src="https://pageturnprohome.files.wordpress.com/2019/07/compressediphone.png" alt="IMG" class="ml-3" style="max-width: 200px; height:auto;" />
+    <h6 class="m-0 text-center">Complete Digital Library Platform for Personalized Learning</h6>
 </div>
-<div class="border border-secondary px-4 py-3 rounded bg-white col-sm-6 col-9 col-md-5 col-lg-4 col-xl-3 mx-auto">
+<div class="d-none d-md-block col-1"></div>
+<div class="border border-secondary p-4 rounded bg-white col-sm-6 col-9 col-md-4 col-lg-3 mx-auto ml-md-5">
     <form action="/registration" method="post" onsubmit="return (checkFieldName('rname') && checkFieldEmail('remailid') && checkFieldPassword('rpassword') && passwordMatch('rpassword','password1'))">
         <h5 class="text-center mb-3">Sign up</h5>
         <div class="input-group">
@@ -16,7 +17,7 @@
         <small class="form-text text-muted text-danger" id='errorrname'><?= $msg1 ?></small>
         <div class="input-group">
             <div class="input-group-prepend">
-                <span class="input-group-text">
+              <span class="input-group-text" style="padding-left:10px;">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                 </span>
             </div>
@@ -54,10 +55,3 @@
         </div>
     </form>          
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="resources/js/tilt.jquery.min.js"></script>
-<script>
-    $(".js-tilt").tilt({
-        scale: 1.1
-    });
-</script>
