@@ -10,15 +10,15 @@ if(isset($_POST['resemailid'])){
 		$row=$user->fetchUser($emailid);
 		$name=$row['user_name'];
 		$pass=$row['password'];
-		$lnk='http://13.232.148.8/passwordreset?id='.$emailid.'&secret='.$pass;
+		$lnk='http://3.7.5.192/passwordreset?id='.$emailid.'&secret='.$pass;
 		if(Mail::sendResetPasswordMail($lnk,$emailid,$name)){
 			header("location:/splashmsg?msgtype=forgotpassword");
 		}
 		else{
-			$user->flashError(['Internal Error, Try Again'],'/reset_password');
+			$user->flashError(['Internal Error, Try Again'],'/');
 		}	
 	}
 }
 else
-	$user->flashError(['Please Enter Valid Email Address'],'/reset_password');
+	$user->flashError(['Please Enter Valid Email Address'],'/');
 ?>
