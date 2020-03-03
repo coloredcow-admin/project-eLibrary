@@ -15,10 +15,10 @@ if(isset($_POST['resemailid'])){
 			header("location:/splashmsg?msgtype=forgotpassword");
 		}
 		else{
-			$user->flashError(['Internal Error, Try Again'],'/');
+			$user->flashError([NULL,NULL,'Internal Error, Try Again'],'/');
 		}	
 	}
 }
 else
-	$user->flashError(['Please Enter Valid Email Address'],'/');
+	$user->flashError([NULL,NULL,'Please Enter Valid Email Address'],'/');
 ?>
