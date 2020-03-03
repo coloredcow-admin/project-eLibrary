@@ -37,11 +37,11 @@
 				<?php  elseif($type==='inreader'):
 					if(!isset($_GET['listbooks'])):?>				
 						<li class="nav-item ml-lg-5 mr-lg-5 mt-2 mb-2 mr-2">
-							<a class="btn btn-link" href="login?listbooks=1" title="list of read books">My Books</a>
+							<a class="btn btn-link cust-link-primary" href="login?listbooks=1" title="list of read books">My Books</a>
 						</li>	
 					<?php else:?>
 						<li class="nav-item ml-lg-5 mr-lg-5 mt-2 mb-2 mr-2">
-							<a class="btn btn-link font-weight-bolder" href="login?listbooks=1" title="list of read books">My Books <i class="fa fa-caret-left"></i></a>
+							<a class="btn btn-link cust-link-primary font-weight-bolder" href="login?listbooks=1" title="list of read books">My Books <i class="fa fa-caret-left"></i></a>
 						</li>	
 					<?php endif;?>
 					<li class="nav-item mx-5 mt-3">

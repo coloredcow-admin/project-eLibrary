@@ -63,8 +63,7 @@ if(isset($_GET['listbooks']))
 								</div>
 								<div class="card-body">
 									<h1 class="card-title pricing-card-title"><?=$total_users?> </h1>
-
-									<a href='/login?view=users' class="btn btn-lg btn-block btn-link">More info <i class="fas fa-info-circle"></i>
+									<a href='/login?view=users' class="btn btn-lg btn-block cust-link-primary">More info <i class="fas fa-info-circle"></i>
 									</a>
 								</div>
 							</div>
@@ -74,7 +73,7 @@ if(isset($_GET['listbooks']))
 								</div>
 								<div class="card-body">
 									<h1 class="card-title pricing-card-title"><?=$total_categories?> </h1>
-									<a href='/login?view=categories' class="btn btn-lg btn-block btn-link">Manage <i class="fas fa-edit"></i></a>
+									<a href='/login?view=categories' class="btn btn-lg btn-block cust-link-primary">Manage <i class="fas fa-edit"></i></a>
 								</div>
 							</div>
 							<div class="card mb-4 shadow-sm">
@@ -84,12 +83,12 @@ if(isset($_GET['listbooks']))
 								</div>
 								<div class="card-body">
 									<h1 class="card-title pricing-card-title"><?=$total_books?></h1>
-									<a href='/login?view=books' class="btn btn-lg btn-block btn-link">More Info <i class="fas fa-info-circle"></i></a>
+									<a href='/login?view=books' class="btn btn-lg btn-block cust-link-primary">More Info <i class="fas fa-info-circle"></i></a>
 								</div>
 							</div>
 						</div>
 						<?php elseif($_GET['view']=='books'): ?>
-							<h2>Books <a href='/addbook'><i class="fas fa-plus-square h4  text-primary"></i></a>
+							<h2>Books <a href='/addbook'><i class="fas fa-plus-square h4 cust-link-primary"></i></a>
 							</h2>	
 						</div>
 						<?php require __dir__.'/'.'../books/ListBooks.php';?>
@@ -100,7 +99,7 @@ if(isset($_GET['listbooks']))
 						<?php require __dir__.'/'.'../users/ListAllUsers.php'; ?>
 						<?php elseif($_GET['view']=='categories'): ?>
 							<h2>Categories
-								<a href='#'  data-toggle="modal" data-target="#addCategoryModal" data-randdata="reload"><i class="fas fa-plus-square h4 text-primary"></i></a></h2>
+								<a href='#'  class="" data-toggle="modal" data-target="#addCategoryModal" data-randdata="reload"><i class="fas fa-plus-square h4 cust-link-primary"></i></a></h2>
 							</div>
 
 							<?php require __dir__.'/'.'../bookCategories/ListCategories.php';

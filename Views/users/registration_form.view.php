@@ -42,16 +42,16 @@
             <input type="password" class="form-control" name="password1" id="password1" placeholder="Confirm Password *" onkeyup="passwordMatch('rpassword','password1')" onblur="passwordMatch('rpassword','password1')">
         </div>
         <small id="errorpassword1" class="form-text text-muted text-danger"></small>
-        <button class="btn  btn-primary btn-block mt-2" type="submit">Get Started</button>
+        <button class="btn  btn-cust-primary btn-block mt-2" type="submit">Get Started</button>
         <div class="row mx-1 my-1">
             <hr class="d-inline col">
             <p class="text-muted text-center d-inline col-2 pt-1 mb-0">or</p>
             <hr class="d-inline col">
         </div>         
-        <button class="btn btn-outline-dark btn-block my-0" onclick="window.location='<?=$loginURL?>'"><img src="../resources/images/google_logo.jpg" class="d-inline rounded-circle mx-auto my-0 py-0"  alt="Login with Google" height="25"> &nbsp;Google Signup
+        <button class="btn btn-cust-outline-light btn-block my-0" onclick="window.location='<?=$loginURL?>'"><img src="../resources/images/google_logo.jpg" class="d-inline rounded-circle mx-auto my-0 py-0"  alt="Login with Google" height="25"> &nbsp;Google Signup
         </button>
         <div class="text-center mt-3 pl-2 mb-0">
-            Already Registered? <a class="" href="/">Login</a>    
+            Already Registered? <a class="cust-link-primary" href="/">Login</a>    
         </div>
     </form>          
 </div>
