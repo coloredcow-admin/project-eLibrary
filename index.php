@@ -22,9 +22,6 @@
 endif;
 require __dir__.'/'.'Views/common/modals.view.php';
 ?>
-<?php 	
-require __dir__.'/resources/bootstrap/bootstrap4_js.php';	
-?>
 <script src="resources/js/tilt.jquery.min.js"></script>
 <script type="text/javascript" src='resources/js/custom_js_functions.js'></script>
 </body>
