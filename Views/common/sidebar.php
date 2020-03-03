@@ -3,12 +3,12 @@
 		<ul class="nav flex-column">
 			<li class="nav-item border-bottom border-top">
 				<?php if(!isset($_GET['view']) && (Request::uri()=='login')):?>
-				<a class="btn btn-link font-weight-bolder" href="/">
+				<a class="btn cust-link-primary font-weight-bolder" href="/">
 					<i class="fas fa-tools"></i>
 					Dashboard <i class="fas fa-caret-left"></i>
 				</a>
 				<?php else:?>
-					<a class="btn btn-link  text-muted " href="/">
+					<a class="btn btn-link text-muted " href="/">
 						<i class="fas fa-tools"></i>
 						Dashboard
 					</a>
@@ -21,7 +21,7 @@
 						Users 
 					</a>
 					<?php elseif($_GET['view']=='users'):?>
-						<a class="btn btn-link font-weight-bolder"  href="/login?view=users">
+						<a class="btn  cust-link-primary font-weight-bolder"  href="/login?view=users">
 							<i class="fas fa-users"></i>
 							Users <i class="fas fa-caret-left"></i>
 						</a>
@@ -39,7 +39,7 @@
 								Categories 
 							</a>
 							<?php elseif($_GET['view']=='categories'):?>
-								<a class="btn btn-link font-weight-bolder"  href="/login?view=categories">	<i class="fas fa-list"></i>
+								<a class="btn cust-link-primary font-weight-bolder"  href="/login?view=categories">	<i class="fas fa-list"></i>
 									Categories <i class="fas fa-caret-left"></i>
 								</a>							
 								<?php else: ?>
@@ -60,7 +60,7 @@
 									<i class="fas fa-plus"></i>
 									Add Book
 								</a>
-								<a class="ml-4 btn btn-link font-weight-bolder" href="/login?view=books">
+								<a class="ml-4 btn cust-link-primary font-weight-bolder" href="/login?view=books">
 									<i class="fas fa-edit"></i>
 									Edit Book<i class="fas fa-caret-left"></i>
 								</a>
@@ -69,7 +69,7 @@
 										<i class="fas fa-book"></i>
 									Books</i>
 								</a>
-								<a class="ml-4 btn btn-link font-weight-bolder" href="/addbook">
+								<a class="ml-4 btn cust-link-primary font-weight-bolder" href="/addbook">
 									<i class="fas fa-plus"></i>
 									Add Book<i class="fas fa-caret-left"></i>
 								</a>
@@ -79,7 +79,7 @@
 										Books
 									</a>
 									<?php elseif($_GET['view']=='books'):?>
-										<a class="btn btn-link font-weight-bolder" href="/login?view=books">
+										<a class="btn cust-link-primary font-weight-bolder" href="/login?view=books">
 											<i class="fas fa-book"></i>
 											Books <i class="fas fa-caret-left"></i>
 										</a>

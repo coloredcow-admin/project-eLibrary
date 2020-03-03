@@ -61,13 +61,13 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary" type="submit">Get Password Reset Email</button>
+          <button class="btn btn-cust-primary" type="submit">Get Password Reset Email</button>
         </div>
       </div>
     </form>
   </div>
 </div>
-<div class="row bg-light d-flex align-items-center py-3" style="min-height:calc(100% - 140px);">
+<div class="row bg-cust-light d-flex align-items-center py-3" style="min-height:calc(100% - 89px);">
 	<?php if (isset($_GET['register']))
 		require __dir__ . '/' . '../../Views/users/registration_form.view.php';
 	elseif ((Request::uri() == '') || (Request::uri() == 'index.php') || (Request::uri() == 'index')) {

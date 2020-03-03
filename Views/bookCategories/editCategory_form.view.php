@@ -21,7 +21,7 @@ $msg1=NULL;
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <button type="submit" class="btn btn-cust-primary">Save Changes</button>
       </div>
     </div>
   </form>

@@ -1,3 +1,6 @@
+body{
+	font-family: sans-serif !important; 
+}
 .cust-hide{
 	display: none;
 }
@@ -26,4 +29,36 @@
 .cust-cross{
 	background-color:#000;
 	border:5px solid #000;  
+}
+.btn-cust-primary:hover{
+	background-color: #a00 !important;
+}
+.btn-cust-primary{
+	background-color: #E7513B !important;
+	color:#fff !important;
+}
+.cust-link-primary{
+	color:#E7513B !important;
+}
+.btn-cust-outline-light{
+	border: 1px solid #bbb !important;
+	background-color: #fff !important;
+	color:#000 !important;
+}
+.btn-cust-outline-light:hover{
+	background-color: #eee !important;
+}
+.bg-cust-light{
+	background-color: #F5F4F2 !important;
+}
+.cust-circle{
+	padding:0px 10px 6px 10px;  
+	border-radius: 100%;
+	background-color: rgba(255,255,255,0.1);
+}
+.cust-circle:hover{
+	background-color: rgba(255,255,255,0.2);
+}
+.cust-circle>i{
+	font-size:0.6em; 
 }
