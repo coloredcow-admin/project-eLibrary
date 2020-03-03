@@ -1,6 +1,6 @@
 <div class="border border-secondary p-4 rounded bg-white col-sm-6 col-9 col-lg-12 mx-auto">
 	<form method="POST" action="/login" onsubmit="return (checkFieldEmail('emailid') &&checkFieldPassword('password'))">
-		<h5 class="text-center">Welcome Back</h5>
+		<h5 class="text-center mb-3 mt-0">Welcome Back</h5>
 		<div class="input-group">
 			<div class="input-group-prepend">
 				<span class="input-group-text" style="padding-left:10px;">
