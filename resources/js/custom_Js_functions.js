@@ -250,10 +250,10 @@ function addCategory(){
            location.reload(); 
          }
          else{
-          var id= "li_"+cid;
+          var id= "li_"+stat;
           var countno=document.getElementById("listAll").childElementCount;
           var makeId="cid"+(countno+1);
-          var onclick="selectMe('"+cid+"','"+cname+"','"+makeId+"')";
+          var onclick="selectMe('"+stat+"','"+cname+"','"+makeId+"')";
           var node = document.createElement("LI");  
           node.setAttribute("id", id);  
           node.setAttribute("onclick",onclick);          

@@ -12,7 +12,6 @@ $router->define([
 	'registration'=>'Controllers/auth/registration.php',
 	'verify'=>'Controllers/auth/verifyRegistration.php',
 	'gmail'=>'Controllers/auth/GmailRegistration.php',
-	'addcat'=>'Controllers/bookCategories/AddCategory.php',
 	'editcat'=>'Controllers/bookCategories/EditCategory.php',
 	'delcat'=>'Controllers/bookCategories/DeleteCategory.php',
 	'delusr'=>'Controllers/users/DeleteUser.php',

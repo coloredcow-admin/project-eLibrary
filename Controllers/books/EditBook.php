@@ -15,21 +15,21 @@ else{
 			$_SESSION['book_name']=$book_name;	
 		}
 		else{
-			// $user->flashError(['Invalid Book Name'],'/editbook');
+			 $user->flashError(['Invalid Book Name'],'/editbook');
 		}	
 		if($_POST['author_name']!=''){
 			$author_name=mysqli_escape_string($conn,$_POST['author_name']);
 			$_SESSION['author_name']=$author_name;	
 		}
 		else{
-			// $user->flashError([NULL,'Invalid Author Name'],'/editbook');
+			 $user->flashError([NULL,'Invalid Author Name'],'/editbook');
 		}	
 		if($_POST['edition']!=''){
 			$edition=mysqli_escape_string($conn,$_POST['edition']);
 			$_SESSION['edition']=$edition;	
 		}
 		else{
-			// $user->flashError([NULL,NULL,'Invalid Book Edition'],'/editbook');
+			 $user->flashError([NULL,NULL,'Invalid Book Edition'],'/editbook');
 		}	
 		if(isset($book_name) && isset($author_name) && isset($edition)){
 			$categories=array();
@@ -61,11 +61,11 @@ else{
 				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 				if ($_FILES["book_cover"]["size"] > 1048576) {
 					echo "string1";
-					// Users::flashError(['Sorry, your file is too large. '],'/login?books=1');
+					 Users::flashError(['Sorry, your file is too large. '],'/login?books=1');
 				}
 				if($imageFileType != "jpg") {
 					echo "string2";
-					// Users::flashError(['Upload File is not jpg Image '],'/login?books=1');
+					 Users::flashError(['Upload File is not jpg Image '],'/login?books=1');
 				}
 				$deltitle=$_POST['cover_name'];
 				$delfilename=$deltitle.".jpg";      

@@ -20,10 +20,11 @@ class Categories extends QueryBuilder{
 			return TRUE;
 	}
 	public function registerCategory(){
-		if(parent::insert($this->table,$this->names,$this->values))
-			header('location:/login?view=categories');
-		else 
-			Users::flashError('category Already Exists','/login');
+		$id=parent::insert($this->table,$this->names,$this->values);
+		if(isset($id))
+			return $id;
+		else
+			FALSE;
 	}
 	public function updateCategory($cname,$cid){
 		$update=['category_name'=>''];
