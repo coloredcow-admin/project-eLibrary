@@ -9,29 +9,29 @@ if($_SESSION['type']!='inadmin'){
 	header('location:/');
 }
 else{
-	if(isset($_POST['book_name']) and isset($_POST['author_name']) and isset($_POST['book_edition'])){
+	if(isset($_POST['book_name']) && isset($_POST['author_name']) && isset($_POST['edition'])){
 		if($_POST['book_name']!=''){
 			$book_name=mysqli_escape_string($conn,$_POST['book_name']);
 			$_SESSION['book_name']=$book_name;	
 		}
 		else{
-			$user->flashError(['Invalid Book Name'],'/editbook');
+			// $user->flashError(['Invalid Book Name'],'/editbook');
 		}	
 		if($_POST['author_name']!=''){
 			$author_name=mysqli_escape_string($conn,$_POST['author_name']);
 			$_SESSION['author_name']=$author_name;	
 		}
 		else{
-			$user->flashError([NULL,'Invalid Author Name'],'/editbook');
+			// $user->flashError([NULL,'Invalid Author Name'],'/editbook');
 		}	
-		if($_POST['book_edition']!=''){
-			$book_edition=mysqli_escape_string($conn,$_POST['book_edition']);
-			$_SESSION['book_edition']=$book_edition;	
+		if($_POST['edition']!=''){
+			$edition=mysqli_escape_string($conn,$_POST['edition']);
+			$_SESSION['edition']=$edition;	
 		}
 		else{
-			$user->flashError([NULL,NULL,'Invalid Book Edition'],'/editbook');
+			// $user->flashError([NULL,NULL,'Invalid Book Edition'],'/editbook');
 		}	
-		if(isset($book_name) && isset($author_name) && isset($book_edition)){
+		if(isset($book_name) && isset($author_name) && isset($edition)){
 			$categories=array();
 			$i=1;
 			$makeId='cid'.$i++;
@@ -61,11 +61,11 @@ else{
 				$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 				if ($_FILES["book_cover"]["size"] > 1048576) {
 					echo "string1";
-					Users::flashError(['Sorry, your file is too large. '],'/login?books=1');
+					// Users::flashError(['Sorry, your file is too large. '],'/login?books=1');
 				}
 				if($imageFileType != "jpg") {
 					echo "string2";
-					Users::flashError(['Upload File is not jpg Image '],'/login?books=1');
+					// Users::flashError(['Upload File is not jpg Image '],'/login?books=1');
 				}
 				$deltitle=$_POST['cover_name'];
 				$delfilename=$deltitle.".jpg";      
@@ -82,7 +82,7 @@ else{
 		}
 	}
 	else{
-		$msg1=$msg2=$msg3=$book_name=$author_name=$book_edition=NULL;
+		$msg1=$msg2=$msg3=$book_name=$author_name=$edition=NULL;
 		if(isset($_SESSION['error1'])){
 			$msg1="<p class='text-danger'>{$_SESSION['error1']}</p>";
 			unset($_SESSION['error1']);
@@ -104,9 +104,9 @@ else{
 			$author_name=$_SESSION['author_name'];
 			unset($_SESSION['author_name']);
 		}
-		if(isset($_SESSION['book_edition'])){
-			$book_edition=$_SESSION['book_edition'];
-			unset($_SESSION['book_edition']);
+		if(isset($_SESSION['edition'])){
+			$edition=$_SESSION['edition'];
+			unset($_SESSION['edition']);
 		}
 		if(isset($_GET['bid']) || isset($_POST['bid'])){
 			$bid=(isset($_GET['bid']))?$_GET['bid']:$_POST['bid'];
