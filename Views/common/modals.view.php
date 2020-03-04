@@ -34,7 +34,7 @@
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label>Please confirm the deletion of this category "</label>
+          <label>Please confirm the deletion of <span id='category_name' class="font-weight-bolder"></span></label>
         </div>
         <input type="hidden" name="cid" id='cid'>
       </div>
@@ -58,7 +58,7 @@
       </div>
       <div class="modal-body">
         <div class="form-group">
-         <label>Please confirm the deletion of this user from the list "</label>
+         <label>Please confirm the deletion of <span id='user_name' class="font-weight-bolder"></span></label>
         </div>
         <input type="hidden" name="uid" id='uid'>
       </div>
@@ -83,7 +83,7 @@
       </div>
       <div class="modal-body">
         <div class="form-group">
-           <label>Please confirm the deletion of this book</label>
+           <label>Please confirm the deletion of <span id='book_name' class="font-weight-bolder"></span></label>
         </div>
         <input type="hidden" name="bid" id='bid'>
       </div>
