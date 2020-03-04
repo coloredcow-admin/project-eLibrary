@@ -62,3 +62,15 @@ body{
 .cust-circle>i{
 	font-size:0.6em; 
 }
+::-webkit-input-placeholder{
+	font-size: 0.9em !important;
+}
+::-moz-placeholder {
+	font-size: 0.9em !important;
+}
+:-ms-input-placeholder {
+	font-size: 0.9em !important;
+}
+::placeholder {
+	font-size: 0.9em !important;
+}
