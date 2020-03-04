@@ -33,7 +33,7 @@
              $i++;
              ?>
              <div class="col-xl-4 col-lg-6 col-md-12 col-sm-6 mx-auto  card-group">
-              <div class="card  flex-md-row mb-4">
+              <div class="card flex-md-row mb-4">
                 <?php $fetch='../../resources/uploads/'.$row['cover_image_name'].".jpg";
                 $bid=$row['bid'];
                 $uid=$_SESSION['uid'];
@@ -76,10 +76,6 @@
                       <?php endif; ?> 
                       <?php 
                     endif; ?> 
-                    <?php if($_SESSION['type']=='inadmin'): ?>
-                      <a <?="href='/editbook?bid={$bid}'"?> class='mx-auto card-link' title='edit this book'><i class="fa fa-edit">  </i></a>
-                      <a href='javascript:void(0)' class="text-danger" data-toggle="modal" data-target="#deleteBookModal" data-bname="<?=$row['book_name']?>" data-bid="<?=$bid?>" title='delete this book'>Delete</a>
-                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -98,7 +94,7 @@
               <div class="align-self-center m-2">
                 <img class='' style="height: 255px; width: 170px;" height=255 width=170  <?="src='{$fetch}'";?> alt='Book Cover'>  
               </div>
-              <div class="card-body d-flex flex-column text-md-left text-center">
+              <div class="card-body d-flex m-0 py-auto px-1 flex-column text-md-left text-center">
                 <h4 class="mb-0">
                   <strong class="d-inline-block mb-2"><?=$row['book_name'] ?></strong>
                 </h4>
