@@ -148,7 +148,7 @@
       <?php endif;?>
     </div>
     <?php if(!isset($bookIds) && $i!=0):?>
-      <div class="row col-3 offset-8 py-3">
+      <div class="row col-3 mx-auto py-3">
         <?php 
         if(($offset-$limit)>=0):
           $offset1=$offset-$limit;
