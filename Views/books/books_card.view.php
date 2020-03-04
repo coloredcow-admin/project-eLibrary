@@ -8,7 +8,7 @@
         }
         ?>
         <div class="d-inline col text-center m-3">
-          <label for='limit'>Showing:</label> 
+          <label for='limit'>Showing&nbsp;</label> 
           <select style="width:50px;" name='limit' onchange="this.form.submit()">
             <?php 
             if($limit>3 && $ChangesAllowed)  echo "<option value='".(($limit-3)-($limit-3)%3)."'>".(($limit-3)-($limit-3)%3)."</option>";
