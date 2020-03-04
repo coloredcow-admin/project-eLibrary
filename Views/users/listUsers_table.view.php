@@ -9,7 +9,7 @@
               if($limit<=10 && $limit!=$total) echo "<option value='".($limit+10)."'>".($limit+10)."</option>";
               if($limit<=5 && $limit!=$total) echo "<option value='".($limit+15)."'>".($limit+15)."</option>";?>
             </select> of <?=$total?></div>
-          <div class="table-responsive position-relative" style="top:-35px;">
+          <div class="table-responsive position-relative" style="top:-33px;">
             <table class="table table-striped">
               <thead>
                 <tr class="text-center">
